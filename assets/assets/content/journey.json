@@ -1,0 +1,403 @@
+{
+ "stages": [
+  {
+   "id": "radici",
+   "n": 1,
+   "title": "Radici",
+   "subtitle": "Respiro e presenza",
+   "color": "#F59E0B",
+   "icon": "spa",
+   "intro": "Ogni cammino comincia dal respiro. In questa tappa impari a fermarti e a tornare al presente: la base di tutto il resto.",
+   "goal": {
+    "type": "sessions",
+    "target": 5,
+    "days": 7,
+    "label": "5 pratiche in 7 giorni"
+   },
+   "steps": [
+    {
+     "id": "radici-1",
+     "title": "Il primo respiro",
+     "practice": "respiro-consapevole",
+     "insight": "Notare il respiro senza cambiarlo allena l'attenzione come un muscolo. Ogni ritorno dopo una distrazione è una ripetizione.",
+     "reflection": "Cosa hai notato del tuo respiro che di solito non noti?",
+     "challenge": "Oggi, tre volte, fai tre respiri consapevoli prima di prendere il telefono."
+    },
+    {
+     "id": "radici-2",
+     "title": "Respiro a sei",
+     "practice": "respiro-coerente",
+     "insight": "Respirare a circa sei atti al minuto aumenta la variabilità del battito cardiaco, un indicatore di equilibrio del sistema nervoso.",
+     "reflection": "Com'era il tuo corpo prima della pratica, e com'è adesso?",
+     "challenge": "Usa il respiro a sei per due minuti in un momento di tensione."
+    },
+    {
+     "id": "radici-3",
+     "title": "Ancorarsi al corpo",
+     "practice": "body-scan-breve",
+     "insight": "Il corpo vive sempre nel presente. Ascoltarlo riporta la mente fuori dai pensieri sul passato e sul futuro.",
+     "reflection": "In quale parte del corpo tieni più tensione?",
+     "challenge": "Prima di dormire, passa trenta secondi a sentire i piedi."
+    },
+    {
+     "id": "radici-4",
+     "title": "Le cinque porte",
+     "practice": "cinque-sensi",
+     "insight": "La tecnica cinque-quattro-tre-due-uno usa i sensi per interrompere la spirale dell'ansia.",
+     "reflection": "Quale senso ti ha riportato più facilmente qui?",
+     "challenge": "Usa le cinque porte la prossima volta che ti senti agitato."
+    },
+    {
+     "id": "radici-5",
+     "title": "Sedersi con ciò che c'è",
+     "practice": "consapevolezza-aperta",
+     "insight": "La consapevolezza aperta non sceglie un oggetto: accoglie tutto ciò che appare. È lo spazio da cui osservare la mente.",
+     "reflection": "Cosa ti è sembrato più difficile da lasciar passare?",
+     "challenge": "Siediti cinque minuti in silenzio, senza telefono, una volta oggi."
+    }
+   ]
+  },
+  {
+   "id": "mente",
+   "n": 2,
+   "title": "Mente chiara",
+   "subtitle": "Osservare pensieri ed emozioni",
+   "color": "#38BDF8",
+   "icon": "cloud",
+   "intro": "I pensieri non sono fatti. Qui impari a vederli arrivare e passare, e ad accogliere le emozioni nel corpo invece di subirle.",
+   "goal": {
+    "type": "checkins",
+    "target": 7,
+    "days": 7,
+    "label": "7 check-in dell'umore in una settimana"
+   },
+   "steps": [
+    {
+     "id": "mente-1",
+     "title": "Dare un nome ai pensieri",
+     "practice": "notare-pensieri",
+     "insight": "Etichettare un pensiero attiva le aree del cervello che regolano le emozioni e riduce la reattività.",
+     "reflection": "Qual è il pensiero che torna più spesso in questi giorni?",
+     "challenge": "Quando arriva una preoccupazione, dalle un nome e torna a ciò che stai facendo."
+    },
+    {
+     "id": "mente-2",
+     "title": "Il cielo e le nuvole",
+     "practice": "cielo-nuvole",
+     "insight": "Vedere i pensieri come eventi passeggeri si chiama defusione: ti separa dal contenuto della mente.",
+     "reflection": "Che nuvola è passata più spesso oggi?",
+     "challenge": "Ripeti a te stesso, almeno una volta: sono il cielo, non la nuvola."
+    },
+    {
+     "id": "mente-3",
+     "title": "Le emozioni nel corpo",
+     "practice": "emozioni-corpo",
+     "insight": "Riconoscere, permettere, esplorare, nutrire: un metodo semplice per stare con un'emozione difficile.",
+     "reflection": "Dove hai sentito l'emozione nel corpo, e di cosa avevi bisogno?",
+     "challenge": "Fai il check-in dell'umore tre volte oggi."
+    },
+    {
+     "id": "mente-4",
+     "title": "Lasciar andare la tensione",
+     "practice": "rilassamento-progressivo",
+     "insight": "Il rilassamento muscolare progressivo riduce l'ansia e migliora il sonno: il corpo impara la differenza tra tensione e riposo.",
+     "reflection": "Quale gruppo di muscoli era più contratto?",
+     "challenge": "Durante la giornata, rilassa le spalle ogni volta che ti accorgi di averle alzate."
+    },
+    {
+     "id": "mente-5",
+     "title": "Gentilezza verso di sé",
+     "practice": "gentilezza-verso-se",
+     "insight": "L'autocompassione è associata a più resilienza e motivazione, non meno: chi si tratta bene si rialza prima.",
+     "reflection": "Cosa ti diresti se fossi il tuo migliore amico?",
+     "challenge": "Oggi, quando sbagli, rispondi a te stesso come a un amico."
+    }
+   ]
+  },
+  {
+   "id": "sonno",
+   "n": 3,
+   "title": "Il buon sonno",
+   "subtitle": "Riposare davvero",
+   "color": "#818CF8",
+   "icon": "bedtime",
+   "intro": "Il sonno è il terreno dei sogni e del benessere. Qui costruisci un rituale serale e impari a rilassarti fino ad addormentarti.",
+   "goal": {
+    "type": "sleep_logs",
+    "target": 7,
+    "days": 10,
+    "label": "7 notti registrate in 10 giorni"
+   },
+   "steps": [
+    {
+     "id": "sonno-1",
+     "title": "Respiro quattro sette otto",
+     "practice": "respiro-478",
+     "insight": "L'espirazione lunga attiva il sistema parasimpatico, quello del riposo e della digestione.",
+     "reflection": "Quanto tempo hai impiegato ad addormentarti stanotte?",
+     "challenge": "Un'ora prima di dormire, luci basse e niente schermi luminosi."
+    },
+    {
+     "id": "sonno-2",
+     "title": "Yoga nidra",
+     "practice": "yoga-nidra",
+     "insight": "Lo yoga nidra, o riposo profondo senza sonno, riduce lo stress e aiuta a recuperare energie anche di giorno.",
+     "reflection": "Quale immagine ti è rimasta di più?",
+     "challenge": "Scegli un orario fisso per andare a letto e rispettalo per tre sere."
+    },
+    {
+     "id": "sonno-3",
+     "title": "Il corpo pesante",
+     "practice": "corpo-pesante",
+     "insight": "Il training autogeno usa frasi su peso e calore per guidare il corpo verso il rilassamento profondo.",
+     "reflection": "Com'è stato il tuo sonno, da uno a cinque?",
+     "challenge": "Ascolta questa pratica a letto, al buio."
+    },
+    {
+     "id": "sonno-4",
+     "title": "La mente che non si spegne",
+     "practice": "mente-che-corre",
+     "insight": "Immaginare oggetti casuali e scollegati imita il pensiero sconnesso che precede il sonno e lo favorisce.",
+     "reflection": "Cosa ti tiene sveglio più spesso?",
+     "challenge": "Scrivi le preoccupazioni su un foglio prima di andare a letto, e lasciale lì."
+    },
+    {
+     "id": "sonno-5",
+     "title": "Risveglio gentile",
+     "practice": "risveglio-gentile",
+     "insight": "Come inizi la giornata orienta il resto. Pochi minuti di intenzione valgono più di un'ora di fretta.",
+     "reflection": "Qual è la tua intenzione per oggi?",
+     "challenge": "Non guardare il telefono nei primi quindici minuti dopo il risveglio."
+    }
+   ]
+  },
+  {
+   "id": "sogni",
+   "n": 4,
+   "title": "Ricordare i sogni",
+   "subtitle": "Il diario della notte",
+   "color": "#A78BFA",
+   "icon": "auto_stories",
+   "intro": "Tutti sognano ogni notte, ma pochi ricordano. Qui alleni il ricordo e scopri i tuoi segni onirici: le porte verso la lucidità.",
+   "goal": {
+    "type": "dreams",
+    "target": 3,
+    "days": 7,
+    "label": "3 sogni ricordati in 7 giorni"
+   },
+   "steps": [
+    {
+     "id": "sogni-1",
+     "title": "L'intenzione di ricordare",
+     "practice": "intenzione-sogni",
+     "insight": "Chi decide prima di dormire di ricordare i sogni li ricorda più spesso: l'intenzione orienta la memoria.",
+     "reflection": "Hai ricordato qualcosa stamattina? Anche un'emozione conta.",
+     "challenge": "Tieni il telefono o un quaderno accanto al letto, pronto per il diario."
+    },
+    {
+     "id": "sogni-2",
+     "title": "Il diario appena svegli",
+     "practice": "ricordo-al-risveglio",
+     "insight": "Muoversi o pensare alla giornata cancella i sogni in pochi secondi. Restare fermi li trattiene.",
+     "reflection": "Scrivi nel diario il sogno di stanotte, anche solo un frammento.",
+     "challenge": "Domattina resta immobile un minuto prima di alzarti."
+    },
+    {
+     "id": "sogni-3",
+     "title": "I segni ricorrenti",
+     "practice": "segni-del-sogno",
+     "insight": "I segni onirici sono elementi che tornano nei tuoi sogni. L'app li raccoglie dal diario e te li mostra.",
+     "reflection": "Quale elemento torna più spesso nei tuoi sogni?",
+     "challenge": "Rileggi gli ultimi sogni del diario e segna gli elementi strani."
+    },
+    {
+     "id": "sogni-4",
+     "title": "Il risveglio di metà notte",
+     "practice": "wbtb",
+     "insight": "Svegliarsi dopo circa cinque ore e riaddormentarsi sfrutta i periodi REM più lunghi della seconda metà della notte.",
+     "reflection": "Com'è andato il risveglio di metà notte?",
+     "challenge": "Una notte questa settimana, metti una sveglia dopo cinque ore di sonno."
+    },
+    {
+     "id": "sogni-5",
+     "title": "Il filo del sogno",
+     "practice": "rientrare-nel-sogno",
+     "insight": "Ricostruire la scena di un sogno appena interrotto permette spesso di rientrarci.",
+     "reflection": "Sei riuscito a tornare in un sogno? Cosa è successo?",
+     "challenge": "Al prossimo risveglio nel mezzo di un sogno, prova a rientrarci."
+    }
+   ]
+  },
+  {
+   "id": "lucido",
+   "n": 5,
+   "title": "Svegliarsi nel sogno",
+   "subtitle": "Il sogno lucido",
+   "color": "#E879F9",
+   "icon": "visibility",
+   "intro": "Un sogno lucido è un sogno in cui sai di sognare. Si allena con i test di realtà di giorno e con tecniche precise di notte. Non è garantito, ma è una abilità che cresce.",
+   "goal": {
+    "type": "reality_checks",
+    "target": 70,
+    "days": 7,
+    "label": "70 test di realtà in 7 giorni"
+   },
+   "steps": [
+    {
+     "id": "lucido-1",
+     "title": "Il test di realtà",
+     "practice": "test-di-realta",
+     "insight": "Fare test di realtà sinceri durante il giorno crea l'abitudine di chiedersi se si sta sognando, anche nei sogni.",
+     "reflection": "Quante volte oggi ti sei davvero chiesto se stavi sognando?",
+     "challenge": "Dieci test di realtà oggi: naso, mani e la domanda sincera."
+    },
+    {
+     "id": "lucido-2",
+     "title": "MILD",
+     "practice": "mild",
+     "insight": "In uno studio su larga scala, la tecnica MILD dopo un breve risveglio notturno è stata la più efficace tra quelle provate.",
+     "reflection": "Che segno onirico hai usato nella visualizzazione?",
+     "challenge": "Stanotte usa MILD dopo il risveglio di metà notte."
+    },
+    {
+     "id": "lucido-3",
+     "title": "Prova generale",
+     "practice": "ritorno-nel-sogno-lucido",
+     "insight": "Provare mentalmente cosa fare da lucido prepara il cervello ad agire quando la lucidità arriva.",
+     "reflection": "Cosa vuoi fare nel tuo prossimo sogno lucido?",
+     "challenge": "Ripassa la sequenza: test, calma, mani, sensi, scelta."
+    },
+    {
+     "id": "lucido-4",
+     "title": "WILD",
+     "practice": "wild",
+     "insight": "Con il WILD si passa dalla veglia al sogno senza perdere coscienza, attraversando le immagini ipnagogiche.",
+     "reflection": "Cosa hai visto o sentito mentre ti addormentavi?",
+     "challenge": "Prova il WILD dopo il risveglio di metà notte, senza aspettative."
+    },
+    {
+     "id": "lucido-5",
+     "title": "Stabilizzare",
+     "practice": "stabilizzare",
+     "insight": "Toccare, strofinare le mani e restare calmi prolunga i sogni lucidi, che spesso all'inizio durano pochi secondi.",
+     "reflection": "Hai avuto un momento di lucidità? Descrivilo nel diario.",
+     "challenge": "Ogni sera ripassa i cinque strumenti per stabilizzare il sogno."
+    }
+   ]
+  },
+  {
+   "id": "oltre",
+   "n": 6,
+   "title": "Oltre il corpo",
+   "subtitle": "Paralisi del sonno ed esperienze fuori dal corpo",
+   "color": "#2DD4BF",
+   "icon": "air",
+   "intro": "Le esperienze fuori dal corpo sono vissute da molte persone, spesso al confine tra sonno e veglia. Qui impari a viverle senza paura e a esplorarle con curiosità, come esperienze soggettive.",
+   "goal": {
+    "type": "stage_sessions",
+    "target": 6,
+    "days": 14,
+    "label": "6 sessioni di questa tappa in 14 giorni"
+   },
+   "steps": [
+    {
+     "id": "oltre-1",
+     "title": "La paralisi senza paura",
+     "practice": "paralisi-senza-paura",
+     "insight": "La paralisi del sonno è innocua e temporanea: la mente si sveglia prima che il corpo esca dal sonno REM.",
+     "reflection": "Ti è mai capitata la paralisi del sonno? Come l'hai vissuta?",
+     "challenge": "Impara a memoria la frase: è la paralisi, è innocua, sto bene."
+    },
+    {
+     "id": "oltre-2",
+     "title": "Il corpo dorme, la mente è sveglia",
+     "practice": "corpo-addormentato",
+     "insight": "Restare coscienti mentre il corpo si addormenta è la porta comune di sogni lucidi ed esperienze fuori dal corpo.",
+     "reflection": "Quali sensazioni sono comparse durante la pratica?",
+     "challenge": "Pratica questo stato per dieci minuti dopo un risveglio notturno."
+    },
+    {
+     "id": "oltre-3",
+     "title": "La tecnica della corda",
+     "practice": "tecnica-corda",
+     "insight": "La corda immaginaria dà alla mente un'azione precisa da compiere senza muovere il corpo fisico.",
+     "reflection": "Cosa è successo quando hai tirato la corda?",
+     "challenge": "Prova la corda in due sessioni questa settimana."
+    },
+    {
+     "id": "oltre-4",
+     "title": "Il rotolamento",
+     "practice": "rotolamento",
+     "insight": "Appena svegli, il corpo è ancora addormentato: è il momento ideale per la sensazione di uscita.",
+     "reflection": "Hai sentito qualcosa di simile a un'uscita? Descrivilo.",
+     "challenge": "Al prossimo risveglio, prima di muoverti, prova il rotolamento."
+    },
+    {
+     "id": "oltre-5",
+     "title": "Tornare e integrare",
+     "practice": "ritorno-integrazione",
+     "insight": "Dopo esperienze intense, radicarsi nel corpo e scriverle aiuta a integrarle e a dormire tranquilli.",
+     "reflection": "Cosa ti ha insegnato questa tappa su di te?",
+     "challenge": "Rileggi tutto ciò che hai scritto in questa tappa."
+    }
+   ]
+  },
+  {
+   "id": "integrazione",
+   "n": 7,
+   "title": "Integrazione",
+   "subtitle": "Valori, gentilezza, scopo",
+   "color": "#34D399",
+   "icon": "favorite",
+   "intro": "La pratica diventa vita. In quest'ultima tappa porti ciò che hai imparato nelle relazioni, nelle scelte e nella direzione che vuoi dare ai tuoi giorni.",
+   "goal": {
+    "type": "gratitude",
+    "target": 7,
+    "days": 7,
+    "label": "7 giorni di gratitudine"
+   },
+   "steps": [
+    {
+     "id": "integrazione-1",
+     "title": "I tuoi valori",
+     "practice": "valori",
+     "insight": "Vivere secondo i propri valori, più che raggiungere obiettivi, è legato al senso di significato e di benessere.",
+     "reflection": "Quali sono le tue tre parole?",
+     "challenge": "Fai una piccola azione oggi che onori uno dei tuoi valori."
+    },
+    {
+     "id": "integrazione-2",
+     "title": "La persona che stai diventando",
+     "practice": "se-migliore",
+     "insight": "Immaginare il proprio sé migliore possibile aumenta ottimismo e motivazione, secondo diversi studi.",
+     "reflection": "Qual è il piccolo passo di questa settimana?",
+     "challenge": "Fai il piccolo passo che hai scelto."
+    },
+    {
+     "id": "integrazione-3",
+     "title": "La gentilezza che si allarga",
+     "practice": "metta",
+     "insight": "La gentilezza amorevole praticata con regolarità aumenta le emozioni positive e il senso di connessione con gli altri.",
+     "reflection": "Com'è stato augurare il bene a una persona difficile?",
+     "challenge": "Fai un gesto gentile, anonimo, per qualcuno oggi."
+    },
+    {
+     "id": "integrazione-4",
+     "title": "Gratitudine profonda",
+     "practice": "gratitudine",
+     "insight": "Scrivere tre cose per cui si è grati, per una settimana, migliora il benessere anche nei mesi successivi.",
+     "reflection": "Tre cose per cui sei grato oggi.",
+     "challenge": "Ringrazia di persona qualcuno che ti ha aiutato."
+    },
+    {
+     "id": "integrazione-5",
+     "title": "La tua strada",
+     "practice": "la-tua-pratica",
+     "insight": "Le abitudini durano quando sono piccole, legate a qualcosa che già fai, e quando sai come ricominciare.",
+     "reflection": "Quale sarà la tua pratica quotidiana, quando e dove?",
+     "challenge": "Fai la tua pratica domani alla stessa ora."
+    }
+   ]
+  }
+ ]
+}

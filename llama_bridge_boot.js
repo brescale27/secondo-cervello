@@ -1,0 +1,656 @@
+// llama.cpp WebGPU bridge bootstrap, adapted from the llamadart chat example (MIT License, Copyright (c) 2024 Jhin Lee).
+// Changes: no service-worker cleanup (the app has its own), local bridge assets first.
+window.__llamadartPreferLocalBridgeRuntime = true;
+    async function clearFlutterServiceWorkerCaches() {
+      if (typeof window === 'undefined') {
+        return;
+      }
+
+      if ('serviceWorker' in navigator) {
+        try {
+          const registrations = await navigator.serviceWorker.getRegistrations();
+          await Promise.allSettled(
+            registrations.map((registration) => registration.unregister()),
+          );
+        } catch (_) {
+          // best-effort cleanup only
+        }
+      }
+
+      if ('caches' in window) {
+        try {
+          const keys = await caches.keys();
+          const flutterLikeKeys = keys.filter((key) =>
+            key.startsWith('flutter-') ||
+            key.startsWith('workbox-') ||
+            key.includes('flutter-app-cache')
+          );
+          await Promise.allSettled(
+            flutterLikeKeys.map((key) => caches.delete(key)),
+          );
+        } catch (_) {
+          // best-effort cleanup only
+        }
+      }
+    }
+
+
+    const configuredRepo = window.__llamadartBridgeAssetsRepo;
+    const configuredTag = window.__llamadartBridgeAssetsTag;
+    const bootstrapSearchParams = new URLSearchParams(window.location.search);
+    const configuredMockBridgeScenario =
+      typeof window.__llamadartMockBridgeScenario === 'string' &&
+      window.__llamadartMockBridgeScenario.length > 0
+        ? window.__llamadartMockBridgeScenario
+        : bootstrapSearchParams.get('llamadart_mock_bridge');
+    const configuredMockBridgeResponse =
+      typeof window.__llamadartMockBridgeResponse === 'string' &&
+      window.__llamadartMockBridgeResponse.length > 0
+        ? window.__llamadartMockBridgeResponse
+        : bootstrapSearchParams.get('llamadart_mock_response');
+    const configuredMockBridgeDelayMs = Number(
+      window.__llamadartMockBridgeDelayMs ??
+        bootstrapSearchParams.get('llamadart_mock_delay_ms'),
+    );
+    const bridgeBootstrapVerbose =
+      window.__llamadartBridgeBootstrapVerbose === true;
+    const configuredThreadPoolSize = Number(window.__llamadartBridgeThreadPoolSize);
+    const hardwareConcurrency = Number(window.navigator?.hardwareConcurrency);
+    const inferredThreadPoolSize =
+      window.crossOriginIsolated === true
+        ? Number.isFinite(hardwareConcurrency) && hardwareConcurrency > 0
+          ? Math.max(2, Math.min(4, Math.trunc(hardwareConcurrency)))
+          : 2
+        : 1;
+    const bridgeThreadPoolSize =
+      Number.isFinite(configuredThreadPoolSize) && configuredThreadPoolSize > 0
+        ? Math.max(1, Math.trunc(configuredThreadPoolSize))
+        : inferredThreadPoolSize;
+    window.__llamadartBridgeThreadPoolSize = bridgeThreadPoolSize;
+    const safariMinPacked = 170400;
+    const safariUnsupportedNeedle =
+      'if(currentSafariVersion<TARGET_NOT_SUPPORTED){throw new Error(`This page was compiled without support for Safari browser. Pass -sMIN_SAFARI_VERSION=${currentSafariVersion} or lower to enable support for this browser.`)}';
+    const safariMinPattern =
+      /if\(currentSafariVersion<\d+\)\{throw new Error\(`This emscripten-generated code requires Safari v\$\{packedVersionToHumanReadable\(\d+\)\} \(detected v\$\{currentSafariVersion\}\)`\)\}/;
+    let patchedCoreBlobUrl = null;
+
+    function bridgeBootstrapLog(level, ...args) {
+      if (!bridgeBootstrapVerbose || typeof console === 'undefined') {
+        return;
+      }
+
+      const fn = console[level];
+      if (typeof fn === 'function') {
+        fn.apply(console, args);
+      }
+    }
+
+    function isSafariBrowser() {
+      const ua = navigator.userAgent || '';
+      return (
+        /Safari\//.test(ua) &&
+        !/(Chrome|Chromium|CriOS|Edg|OPR|Firefox|FxiOS)/.test(ua)
+      );
+    }
+
+    function patchCoreForSafari(source) {
+      let patched = source;
+      if (patched.includes(safariUnsupportedNeedle)) {
+        patched = patched.replace(safariUnsupportedNeedle, '');
+      }
+
+      const safariVersionCheck =
+        `if(currentSafariVersion<${safariMinPacked}){throw new Error(\`This emscripten-generated code requires Safari v\${packedVersionToHumanReadable(${safariMinPacked})} (detected v\${currentSafariVersion})\`)}`;
+      patched = patched.replace(safariMinPattern, safariVersionCheck);
+      return patched;
+    }
+
+    async function resolveCoreModuleUrl(moduleUrl) {
+      const bridgeUrl = new URL(moduleUrl, window.location.href);
+      const coreUrl = new URL('./llama_webgpu_core.js', bridgeUrl);
+      const version = bridgeUrl.searchParams.get('v');
+      if (version != null && version.length > 0) {
+        coreUrl.searchParams.set('v', version);
+      }
+      const coreUrlString = coreUrl.toString();
+      if (!isSafariBrowser()) {
+        window.__llamadartBridgeCoreModuleUrl = coreUrlString;
+        return coreUrlString;
+      }
+
+      const response = await fetch(coreUrlString);
+      if (!response.ok) {
+        throw new Error(
+          `Failed to fetch bridge core for Safari patch: ${response.status} ${response.statusText}`,
+        );
+      }
+
+      const originalSource = await response.text();
+      const patchedSource = patchCoreForSafari(originalSource);
+
+      if (patchedSource === originalSource) {
+        window.__llamadartBridgeCoreModuleUrl = coreUrlString;
+        return coreUrlString;
+      }
+
+      if (patchedCoreBlobUrl) {
+        URL.revokeObjectURL(patchedCoreBlobUrl);
+      }
+
+      patchedCoreBlobUrl = URL.createObjectURL(
+        new Blob([patchedSource], { type: 'text/javascript' }),
+      );
+      window.__llamadartBridgeCoreModuleUrl = patchedCoreBlobUrl;
+      bridgeBootstrapLog('info', 'llamadart: applied Safari core compatibility patch');
+      return patchedCoreBlobUrl;
+    }
+
+    function deriveCoreWasmUrl(moduleUrl, memory64 = false) {
+      try {
+        const url = new URL(moduleUrl, window.location.href);
+        url.pathname = url.pathname.replace(
+          /\/llama_webgpu_bridge\.js$/,
+          memory64 ? '/llama_webgpu_core_mem64.wasm' : '/llama_webgpu_core.wasm',
+        );
+        return url.toString();
+      } catch (_) {
+        return null;
+      }
+    }
+
+    const bridgeAssetsRepo =
+      typeof configuredRepo === 'string' && configuredRepo.length > 0
+        ? configuredRepo
+        : 'leehack/llama-web-bridge-assets';
+    const defaultBridgeAssetsTag = 'v0.1.54';
+    const defaultBridgeLlamaCppTag = 'v0.5.0';
+    const bridgeAssetsTag =
+      typeof configuredTag === 'string' && configuredTag.length > 0
+        ? configuredTag
+        : defaultBridgeAssetsTag;
+    function bridgeTagSupportsSpeechToText(tag) {
+      const match = /^v(\d+)\.(\d+)\.(\d+)(?:$|-)/.exec(String(tag || ''));
+      if (!match) return false;
+      const major = Number(match[1]);
+      const minor = Number(match[2]);
+      const patch = Number(match[3]);
+      return major > 0 || minor > 1 || (minor === 1 && patch >= 30);
+    }
+    const isOfficialBridgeAssetsRepo =
+      bridgeAssetsRepo === 'leehack/llama-web-bridge-assets';
+    window.__llamadartBridgeSpeechToTextSupported =
+      typeof window.__llamadartBridgeSpeechToTextSupported === 'boolean'
+        ? window.__llamadartBridgeSpeechToTextSupported
+        : isOfficialBridgeAssetsRepo &&
+          bridgeTagSupportsSpeechToText(bridgeAssetsTag);
+    window.__llamadartLiteRtLmModuleUrl =
+      typeof window.__llamadartLiteRtLmModuleUrl === 'string' &&
+      window.__llamadartLiteRtLmModuleUrl.length > 0
+        ? window.__llamadartLiteRtLmModuleUrl
+        : 'https://cdn.jsdelivr.net/npm/@litert-lm/core@0.15.0/+esm';
+    const localBridgeVersion =
+      `${defaultBridgeAssetsTag}-local-${defaultBridgeLlamaCppTag}`;
+    window.__llamadartBridgeLocalVersion = localBridgeVersion;
+
+    const localBridgeUrl = `./webgpu_bridge/llama_webgpu_bridge.js?v=${localBridgeVersion}`;
+    const cdnBridgeUrl = `https://cdn.jsdelivr.net/gh/${bridgeAssetsRepo}@${bridgeAssetsTag}/llama_webgpu_bridge.js`;
+    const preferLocalBridgeRuntime =
+      window.__llamadartPreferLocalBridgeRuntime === true ||
+      window.location.hostname === '127.0.0.1' ||
+      window.location.hostname === 'localhost';
+
+    function deriveWorkerModuleUrl(moduleUrl) {
+      try {
+        const url = new URL(moduleUrl, window.location.href);
+        url.pathname = url.pathname.replace(
+          /\/llama_webgpu_bridge\.js$/,
+          '/llama_webgpu_bridge_worker.js',
+        );
+        return url.toString();
+      } catch (_) {
+        return null;
+      }
+    }
+
+    function deriveMem64CoreModuleUrl(moduleUrl) {
+      try {
+        const url = new URL(moduleUrl, window.location.href);
+        url.pathname = url.pathname.replace(
+          /\/llama_webgpu_bridge\.js$/,
+          '/llama_webgpu_core_mem64.js',
+        );
+        return url.toString();
+      } catch (_) {
+        return null;
+      }
+    }
+
+    function trimUnstableUtf8Tail(text) {
+      if (typeof text !== 'string' || text.length === 0) {
+        return '';
+      }
+
+      let end = text.length;
+      while (end > 0 && text.charCodeAt(end - 1) === 0xfffd) {
+        end -= 1;
+      }
+
+      if (end > 0) {
+        const tail = text.charCodeAt(end - 1);
+        if (tail >= 0xd800 && tail <= 0xdbff) {
+          end -= 1;
+        }
+      }
+
+      return end === text.length ? text : text.slice(0, end);
+    }
+
+    function createMockBridgeClass({ scenario, responseText, delayMs }) {
+      const encoder = new TextEncoder();
+      const normalizedScenario = String(scenario || 'echo').trim().toLowerCase();
+      const perChunkDelayMs = Number.isFinite(delayMs)
+        ? Math.max(0, Math.min(1000, Math.trunc(delayMs)))
+        : 0;
+
+      function sleep(ms) {
+        return new Promise((resolve) => setTimeout(resolve, ms));
+      }
+
+      function extractLastUserMessage(prompt) {
+        if (typeof prompt !== 'string' || prompt.length === 0) {
+          return 'hi';
+        }
+
+        const qwenMatches = [...prompt.matchAll(/<\|im_start\|>user\n([\s\S]*?)<\|im_end\|>/g)];
+        if (qwenMatches.length > 0) {
+          return String(qwenMatches[qwenMatches.length - 1][1] || '').trim() || 'hi';
+        }
+
+        const genericMatches = [...prompt.matchAll(/^user:\s*(.+)$/gm)];
+        if (genericMatches.length > 0) {
+          return String(genericMatches[genericMatches.length - 1][1] || '').trim() || 'hi';
+        }
+
+        return prompt.trim().split(/\s+/).slice(-8).join(' ') || 'hi';
+      }
+
+      function resolveResponse(prompt) {
+        if (typeof responseText === 'string' && responseText.length > 0) {
+          return responseText;
+        }
+
+        const lastUser = extractLastUserMessage(prompt);
+        switch (normalizedScenario) {
+          case 'qwen-weird':
+          case 'weird':
+            return 'ЯМ В В K K K K K K';
+          case 'markdown':
+            return '- mock bridge\n- browser smoke\n- deterministic output';
+          case 'echo':
+          default:
+            return `Mock bridge reply: ${lastUser}`;
+        }
+      }
+
+      function chunkText(text) {
+        const symbols = Array.from(String(text || ''));
+        const chunks = [];
+        for (let i = 0; i < symbols.length; i += 3) {
+          chunks.push(symbols.slice(i, i + 3).join(''));
+        }
+        return chunks.length > 0 ? chunks : [''];
+      }
+
+      return class MockLlamaWebGpuBridge {
+        static supportsSafariAdaptiveGpu = false;
+
+        constructor(_config = {}) {
+          this._abortRequested = false;
+          this._contextSize = 4096;
+          this._modelUrl = null;
+          this._metadata = {
+            'general.name': 'Mock WebGPU Bridge',
+            'llamadart.webgpu.runtime_notes': `mock_bridge:${normalizedScenario}`,
+            'llamadart.webgpu.model_source': 'mock',
+            'llamadart.webgpu.model_cache_state': 'disabled',
+            'llamadart.webgpu.execution': 'mock',
+          };
+        }
+
+        async loadModelFromUrl(url, options = {}) {
+          this._abortRequested = false;
+          this._modelUrl = String(url || '');
+          const parsedContext = Number(options?.nCtx);
+          this._contextSize = Number.isFinite(parsedContext) && parsedContext > 0
+            ? Math.trunc(parsedContext)
+            : 4096;
+          window.__llamadartMockBridgeLastLoad = {
+            url: this._modelUrl,
+            options: { ...options },
+            scenario: normalizedScenario,
+          };
+          return null;
+        }
+
+        async prefetchModelToCache(_url, _options = {}) {
+          return null;
+        }
+
+        async evictModelFromCache(_url, _options = {}) {
+          return null;
+        }
+
+        async createCompletion(prompt, options = {}) {
+          const output = resolveResponse(prompt);
+          const chunks = chunkText(output);
+          const emitCurrentTextOnToken = options?.emitCurrentTextOnToken === true;
+          const tokenEventEncoding = typeof options?.tokenEventEncoding === 'string'
+            ? options.tokenEventEncoding
+            : 'bytes';
+          const onToken = typeof options?.onToken === 'function'
+            ? options.onToken
+            : null;
+
+          this._abortRequested = false;
+          window.__llamadartMockBridgeLastPrompt = String(prompt || '');
+          window.__llamadartMockBridgeLastResponse = output;
+
+          let currentText = '';
+          for (const chunk of chunks) {
+            if (this._abortRequested) {
+              break;
+            }
+            currentText += chunk;
+            if (onToken) {
+              const payload = tokenEventEncoding === 'text'
+                ? chunk
+                : encoder.encode(chunk);
+              onToken(payload, emitCurrentTextOnToken ? currentText : null);
+            }
+            if (perChunkDelayMs > 0) {
+              await sleep(perChunkDelayMs);
+            }
+          }
+
+          return currentText;
+        }
+
+        async loadMultimodalProjector(_url) {
+          return null;
+        }
+
+        async unloadMultimodalProjector() {
+          return null;
+        }
+
+        supportsVision() {
+          return false;
+        }
+
+        supportsAudio() {
+          return false;
+        }
+
+        async tokenize(text, _addSpecial = true) {
+          return Array.from(encoder.encode(String(text || '')));
+        }
+
+        async detokenize(tokens, _special = false) {
+          return new TextDecoder().decode(Uint8Array.from(tokens || []));
+        }
+
+        async embed(_text, _options = {}) {
+          return [0.1, 0.2, 0.3];
+        }
+
+        async embedBatch(texts, _options = {}) {
+          return Array.from(texts || []).map(() => [0.1, 0.2, 0.3]);
+        }
+
+        getModelMetadata() {
+          return { ...this._metadata };
+        }
+
+        getContextSize() {
+          return this._contextSize;
+        }
+
+        isGpuActive() {
+          return true;
+        }
+
+        getBackendName() {
+          return 'WEBGPU (Mock)';
+        }
+
+        setLogLevel(_level) {
+          return null;
+        }
+
+        cancel() {
+          this._abortRequested = true;
+        }
+
+        async dispose() {
+          this._abortRequested = true;
+          return null;
+        }
+
+        async applyChatTemplate(messages, addAssistant = true, _customTemplate = null) {
+          const lines = [];
+          for (const msg of messages || []) {
+            lines.push(`${String(msg?.role || 'user')}: ${String(msg?.content || '')}`);
+          }
+          if (addAssistant) {
+            lines.push('assistant: ');
+          }
+          return lines.join('\n');
+        }
+      };
+    }
+
+    function applyUtf8StreamingHotfix(BridgeClass) {
+      if (
+        !BridgeClass ||
+        BridgeClass.__llamadartUtf8StreamingHotfixApplied === true
+      ) {
+        return;
+      }
+
+      const originalCreateRuntime = BridgeClass.prototype?._createRuntime;
+      if (typeof originalCreateRuntime !== 'function') {
+        return;
+      }
+
+      BridgeClass.prototype._createRuntime = function patchedCreateRuntime(...args) {
+        const runtime = originalCreateRuntime.apply(this, args);
+        if (
+          !runtime ||
+          runtime.__llamadartUtf8StreamingHotfixApplied === true
+        ) {
+          return runtime;
+        }
+
+        const originalCreateCompletion = runtime.createCompletion;
+        if (typeof originalCreateCompletion !== 'function') {
+          return runtime;
+        }
+
+        runtime.createCompletion = async function patchedCreateCompletion(
+          prompt,
+          options = {},
+        ) {
+          const core = this?._core;
+          if (!core || typeof core.ccall !== 'function') {
+            return originalCreateCompletion.call(this, prompt, options);
+          }
+
+          const originalCcall = core.ccall.bind(core);
+          let emittedStableText = '';
+          core.ccall = function patchedCcall(
+            identifier,
+            returnType,
+            argTypes,
+            args,
+            opts,
+          ) {
+            if (
+              identifier === 'llamadart_webgpu_last_piece' &&
+              returnType === 'string'
+            ) {
+              const fullText =
+                originalCcall(
+                  'llamadart_webgpu_last_output',
+                  'string',
+                  [],
+                  [],
+                  opts,
+                ) || '';
+              const stableText = trimUnstableUtf8Tail(fullText);
+              if (!stableText.startsWith(emittedStableText)) {
+                emittedStableText = '';
+              }
+              const deltaText = stableText.slice(emittedStableText.length);
+              emittedStableText = stableText;
+              return deltaText;
+            }
+
+            return originalCcall(identifier, returnType, argTypes, args, opts);
+          };
+
+          try {
+            return await originalCreateCompletion.call(this, prompt, options);
+          } finally {
+            core.ccall = originalCcall;
+          }
+        };
+
+        runtime.__llamadartUtf8StreamingHotfixApplied = true;
+        return runtime;
+      };
+
+      BridgeClass.__llamadartUtf8StreamingHotfixApplied = true;
+    }
+
+    // Deterministic bridge-readiness signal awaited by the Dart app so it never
+    // races the asynchronous bridge import. Previously the app could observe a
+    // missing `LlamaWebGpuBridge` global and silently fall back to a fake
+    // "download" that cached nothing.
+    let __resolveBridgeReady;
+    let __rejectBridgeReady;
+    window.__llamadartBridgeReady = false;
+    window.__llamadartBridgeReadyPromise = new Promise((resolve, reject) => {
+      __resolveBridgeReady = resolve;
+      __rejectBridgeReady = reject;
+    });
+    // Attach a no-op rejection handler so a failure/timeout before the Dart
+    // side awaits the promise does not surface as an unhandled rejection in the
+    // console. The failure is still observable via __llamadartBridgeLoadError
+    // and by awaiting __llamadartBridgeReadyPromise.
+    window.__llamadartBridgeReadyPromise.catch(function () {});
+    function markBridgeReady() {
+      window.__llamadartBridgeReady = true;
+      if (__resolveBridgeReady) {
+        __resolveBridgeReady();
+      }
+    }
+    function markBridgeFailed(detail) {
+      window.__llamadartBridgeReady = false;
+      window.__llamadartBridgeLoadError = detail;
+      if (__rejectBridgeReady) {
+        __rejectBridgeReady(new Error(detail));
+      }
+    }
+    // Safety timeout so the Dart side never awaits readiness forever.
+    setTimeout(function () {
+      if (!window.__llamadartBridgeReady && !window.__llamadartBridgeLoadError) {
+        markBridgeFailed('Bridge runtime did not become ready within 30s.');
+      }
+    }, 30000);
+
+    async function loadBridge(moduleUrl, source) {
+      const runtimeAssetModuleUrl = source === 'cdn' ? localBridgeUrl : moduleUrl;
+      const coreModuleUrl = await resolveCoreModuleUrl(runtimeAssetModuleUrl);
+      const mod = await import(moduleUrl);
+      if (!mod?.LlamaWebGpuBridge) {
+        throw new Error('Bridge module loaded but LlamaWebGpuBridge export was missing.');
+      }
+
+      const supportsDedicatedWorkerEntry =
+        typeof mod.enableBridgeWorkerHost === 'function';
+      const workerModuleUrl = supportsDedicatedWorkerEntry
+        ? deriveWorkerModuleUrl(runtimeAssetModuleUrl)
+        : null;
+      const coreModuleUrlMem64 = deriveMem64CoreModuleUrl(runtimeAssetModuleUrl);
+      const wasmUrl = deriveCoreWasmUrl(runtimeAssetModuleUrl);
+      const wasmUrlMem64 = deriveCoreWasmUrl(runtimeAssetModuleUrl, true);
+      const preferMemory64 = window.__llamadartBridgeEnableMem64 === true;
+
+      applyUtf8StreamingHotfix(mod.LlamaWebGpuBridge);
+      window.LlamaWebGpuBridge = mod.LlamaWebGpuBridge;
+      window.__llamadartBridgeAdaptiveSafariGpu =
+        mod.LlamaWebGpuBridge?.supportsSafariAdaptiveGpu === true;
+      window.__llamadartBridgeAssetSource = source;
+      window.__llamadartBridgeModuleUrl = moduleUrl;
+      window.__llamadartBridgeCoreModuleUrl = coreModuleUrl;
+      window.__llamadartBridgeCoreModuleUrlMem64 = coreModuleUrlMem64;
+      window.__llamadartBridgeWasmUrl = wasmUrl;
+      window.__llamadartBridgeWasmUrlMem64 = wasmUrlMem64;
+      window.__llamadartBridgeWorkerUrl = workerModuleUrl;
+      window.__llamadartBridgePreferMemory64 = preferMemory64;
+      window.__llamadartBridgeWorkerFallbackReason = null;
+      window.__llamadartBridgeLoadError = null;
+      markBridgeReady();
+      bridgeBootstrapLog(
+        'info',
+        `llamadart: Web bridge runtime loaded (${source}), runtimeAssets=${source === 'cdn' ? 'local' : source}, worker=${workerModuleUrl ?? 'auto'}, mem64=${coreModuleUrlMem64 ?? 'none'}, preferMem64=${preferMemory64}, threadPool=${bridgeThreadPoolSize}, utf8Hotfix=on`,
+      );
+    }
+
+    if (configuredMockBridgeScenario) {
+      window.LlamaWebGpuBridge = createMockBridgeClass({
+        scenario: configuredMockBridgeScenario,
+        responseText: configuredMockBridgeResponse,
+        delayMs: configuredMockBridgeDelayMs,
+      });
+      window.__llamadartBridgeAdaptiveSafariGpu = false;
+      window.__llamadartBridgeAssetSource = 'mock';
+      window.__llamadartBridgeModuleUrl = null;
+      window.__llamadartBridgeCoreModuleUrl = null;
+      window.__llamadartBridgeCoreModuleUrlMem64 = null;
+      window.__llamadartBridgeWasmUrl = null;
+      window.__llamadartBridgeWasmUrlMem64 = null;
+      window.__llamadartBridgeWorkerUrl = null;
+      window.__llamadartBridgePreferMemory64 = false;
+      window.__llamadartBridgeWorkerFallbackReason = null;
+      window.__llamadartBridgeLoadError = null;
+      markBridgeReady();
+      bridgeBootstrapLog(
+        'info',
+        `llamadart: mock bridge runtime loaded (${configuredMockBridgeScenario})`,
+      );
+    } else {
+      const primaryUrl = preferLocalBridgeRuntime ? localBridgeUrl : cdnBridgeUrl;
+      const primarySource = preferLocalBridgeRuntime ? 'local' : 'cdn';
+      const fallbackUrl = preferLocalBridgeRuntime ? cdnBridgeUrl : localBridgeUrl;
+      const fallbackSource = preferLocalBridgeRuntime ? 'cdn' : 'local';
+
+      let primaryError = null;
+      loadBridge(primaryUrl, primarySource)
+        .catch((err) => {
+          primaryError = err;
+          bridgeBootstrapLog(
+            'warn',
+            `llamadart: ${primarySource.toUpperCase()} bridge load failed, falling back to ${fallbackSource}`,
+            err,
+          );
+          return loadBridge(fallbackUrl, fallbackSource);
+        })
+        .catch((fallbackErr) => {
+          const detail =
+            `${primarySource.toUpperCase()} load failed: ${String(primaryError)} | ` +
+            `${fallbackSource.toUpperCase()} load failed: ${String(fallbackErr)}`;
+          markBridgeFailed(detail);
+          bridgeBootstrapLog('error', 'llamadart: failed to load bridge runtime', detail);
+        });
+    }

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <!-- Replaced by the value of `flutter build web --base-href`. -->
+  <base href="/secondo-cervello/">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+  <meta name="description" content="Secondo Cervello: meditazione, sogni e crescita personale con intelligenza artificiale che gira sul telefono.">
+  <meta name="theme-color" content="#0B1020">
+
+  <!-- iPhone: added to the Home Screen it opens full screen, like an app -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Secondo Cervello">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="favicon.png"/>
+
+  <title>Secondo Cervello</title>
+  <link rel="manifest" href="manifest.json">
+  <style>
+    html, body { margin: 0; height: 100%; background: #0B1020; }
+    #sc-splash { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center;
+      color: #8C94B3; font: 15px -apple-system, system-ui, sans-serif; }
+  </style>
+</head>
+<body>
+  <div id="sc-splash">Secondo Cervello…</div>
+
+  <script>
+    // Service worker: offline use, and cross-origin isolation so the engines can use several threads. On the very
+    // first visit the page reloads once, so that the worker can add its headers.
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js').then(function () {
+        if (window.crossOriginIsolated || sessionStorage.getItem('sc-coi-reload')) return;
+        var reload = function () {
+          sessionStorage.setItem('sc-coi-reload', '1');
+          location.reload();
+        };
+        if (navigator.serviceWorker.controller) reload();
+        else navigator.serviceWorker.addEventListener('controllerchange', reload, { once: true });
+      }).catch(function () {});
+    }
+  </script>
+
+  <script src="sc_web.js"></script>
+
+  <!-- ONNX Runtime Web for the Supertonic voices (WebGPU, or WebAssembly on the CPU) -->
+  <script src="ort/ort.webgpu.min.js"></script>
+  <script>
+    if (window.ort) {
+      ort.env.wasm.wasmPaths = new URL('ort/', document.baseURI).href;
+      ort.env.wasm.numThreads = window.crossOriginIsolated ? Math.min(4, navigator.hardwareConcurrency || 2) : 1;
+    }
+  </script>
+
+  <!-- llama.cpp for the local AI (llamadart WebGPU bridge) -->
+  <script type="module" src="llama_bridge_boot.js"></script>
+
+  <script>
+    window.addEventListener('flutter-first-frame', function () {
+      var s = document.getElementById('sc-splash');
+      if (s) s.remove();
+    });
+  </script>
+  <script src="flutter_bootstrap.js" async></script>
+</body>
+</html>

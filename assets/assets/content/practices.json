@@ -1,0 +1,1760 @@
+{
+ "practices": [
+  {
+   "id": "respiro-consapevole",
+   "title": "Il primo respiro",
+   "kind": "guided",
+   "minutes": 4,
+   "sound": "pink",
+   "segments": [
+    {
+     "t": "Benvenuto. Questa è la prima pratica del tuo cammino. Non devi fare niente di speciale: solo notare.",
+     "p": 4
+    },
+    {
+     "t": "Trova una posizione comoda, seduto o sdraiato. Lascia che le spalle scendano.",
+     "p": 5
+    },
+    {
+     "t": "Se ti va, chiudi gli occhi. Oppure abbassa lo sguardo verso il pavimento.",
+     "p": 5
+    },
+    {
+     "t": "Porta l'attenzione al respiro, così com'è. Non cambiarlo. Osservalo soltanto.",
+     "p": 10
+    },
+    {
+     "t": "Senti l'aria che entra dal naso, fresca. E che esce, un po' più calda.",
+     "p": 12
+    },
+    {
+     "t": "Nota dove il respiro si sente di più: le narici, il petto, la pancia.",
+     "p": 15
+    },
+    {
+     "t": "La mente si distrarrà. È normale, succede a tutti. Quando te ne accorgi, quello è già un momento di presenza.",
+     "p": 6
+    },
+    {
+     "t": "Riporta l'attenzione al respiro, con gentilezza, come si riaccompagna un bambino.",
+     "p": 20
+    },
+    {
+     "t": "Inspira, e sai che stai inspirando. Espira, e sai che stai espirando.",
+     "p": 25
+    },
+    {
+     "t": "Resta qui ancora un po', respiro dopo respiro.",
+     "p": 30
+    },
+    {
+     "t": "Ora allarga l'attenzione a tutto il corpo, ai suoni della stanza.",
+     "p": 8
+    },
+    {
+     "t": "Muovi piano le dita delle mani e dei piedi. Quando vuoi, apri gli occhi.",
+     "p": 4
+    },
+    {
+     "t": "Hai fatto il primo passo. Bastano pochi minuti ogni giorno: è la costanza che cambia le cose.",
+     "p": 2
+    }
+   ]
+  },
+  {
+   "id": "respiro-coerente",
+   "title": "Respiro a sei",
+   "kind": "breath",
+   "minutes": 6,
+   "sound": "pink",
+   "breath": {
+    "in": 5,
+    "hold": 0,
+    "out": 5,
+    "hold2": 0
+   },
+   "segments": [
+    {
+     "t": "Questa pratica rallenta il respiro a circa sei atti al minuto. È il ritmo in cui cuore e respiro si accordano, e il sistema nervoso si calma.",
+     "p": 4
+    },
+    {
+     "t": "Siediti con la schiena dritta ma morbida. Respira dal naso, se puoi.",
+     "p": 4
+    },
+    {
+     "t": "Segui la luce: quando si espande inspira, quando si ritira espira. Senza forzare.",
+     "p": 3
+    },
+    {
+     "breathe": 150
+    },
+    {
+     "t": "Bene. Se ti accorgi di trattenere, lascia andare. Il respiro deve restare comodo, mai affannato.",
+     "p": 2
+    },
+    {
+     "breathe": 150
+    },
+    {
+     "t": "Lascia ora il respiro libero, naturale. Nota com'è il corpo adesso, rispetto a prima.",
+     "p": 10
+    },
+    {
+     "t": "Puoi usare questo respiro ogni volta che ti serve calma: prima di un incontro, di una telefonata difficile, prima di dormire.",
+     "p": 2
+    }
+   ]
+  },
+  {
+   "id": "body-scan-breve",
+   "title": "Ancorarsi al corpo",
+   "kind": "guided",
+   "minutes": 5,
+   "sound": "brown",
+   "segments": [
+    {
+     "t": "Sdraiati o siediti comodo. Questa pratica è un viaggio lento attraverso il corpo.",
+     "p": 5
+    },
+    {
+     "t": "Fai tre respiri un po' più profondi, e lascia che ogni espirazione ti appoggi di più.",
+     "p": 15
+    },
+    {
+     "t": "Porta l'attenzione ai piedi. Le dita, le piante, i talloni. Senti il contatto, il calore, o anche niente.",
+     "p": 15
+    },
+    {
+     "t": "Sali alle caviglie, ai polpacci, alle ginocchia. Non devi rilassare niente: solo sentire.",
+     "p": 15
+    },
+    {
+     "t": "Le cosce, il bacino, il peso del corpo appoggiato.",
+     "p": 15
+    },
+    {
+     "t": "La pancia, che si alza e si abbassa con il respiro.",
+     "p": 15
+    },
+    {
+     "t": "Il petto, il cuore che batte, anche se non lo senti.",
+     "p": 15
+    },
+    {
+     "t": "La schiena, dal basso verso l'alto. Se trovi tensione, respira dentro quella zona.",
+     "p": 18
+    },
+    {
+     "t": "Le spalle. Spesso tengono il peso della giornata. Lasciale andare un po' più giù.",
+     "p": 15
+    },
+    {
+     "t": "Le braccia, le mani, le dita.",
+     "p": 12
+    },
+    {
+     "t": "Il collo, la mandibola. Separa leggermente i denti. La lingua morbida.",
+     "p": 12
+    },
+    {
+     "t": "Il viso: gli occhi, la fronte, la sommità della testa.",
+     "p": 12
+    },
+    {
+     "t": "Ora senti il corpo intero, tutto insieme, come un unico campo di sensazioni.",
+     "p": 25
+    },
+    {
+     "t": "Il corpo è sempre nel presente. Quando la mente corre, puoi tornare qui.",
+     "p": 6
+    },
+    {
+     "t": "Riprendi lentamente il movimento. Apri gli occhi quando ti senti pronto.",
+     "p": 2
+    }
+   ]
+  },
+  {
+   "id": "cinque-sensi",
+   "title": "Le cinque porte",
+   "kind": "guided",
+   "minutes": 3,
+   "sound": "none",
+   "segments": [
+    {
+     "t": "Questa è una pratica da usare ovunque, soprattutto quando l'ansia sale. Si chiama: cinque, quattro, tre, due, uno.",
+     "p": 4
+    },
+    {
+     "t": "Tieni gli occhi aperti. Guardati intorno e trova cinque cose che vedi. Nominale piano, dentro di te.",
+     "p": 20
+    },
+    {
+     "t": "Ora quattro cose che puoi toccare. La stoffa dei vestiti, la superficie sotto di te, l'aria sulla pelle.",
+     "p": 20
+    },
+    {
+     "t": "Tre cose che senti con l'udito. Anche i suoni lontani, anche il silenzio tra un suono e l'altro.",
+     "p": 20
+    },
+    {
+     "t": "Due odori. Se non ne senti, ricorda due profumi che ami.",
+     "p": 15
+    },
+    {
+     "t": "Un sapore. Quello che c'è in bocca adesso, o il ricordo di qualcosa di buono.",
+     "p": 12
+    },
+    {
+     "t": "Senti come i sensi ti hanno riportato qui, in questo momento, in questo luogo.",
+     "p": 10
+    },
+    {
+     "t": "Le cinque porte sono sempre aperte. Puoi rientrare nel presente da qualunque di esse.",
+     "p": 2
+    }
+   ]
+  },
+  {
+   "id": "consapevolezza-aperta",
+   "title": "Sedersi con ciò che c'è",
+   "kind": "guided",
+   "minutes": 4,
+   "sound": "pink",
+   "segments": [
+    {
+     "t": "Oggi non scegliamo un punto su cui concentrarci. Lasciamo che l'attenzione sia aperta, come una finestra.",
+     "p": 5
+    },
+    {
+     "t": "Inizia dal respiro, per qualche istante, per ancorarti.",
+     "p": 20
+    },
+    {
+     "t": "Ora allarga. Includi i suoni, così come arrivano e se ne vanno.",
+     "p": 25
+    },
+    {
+     "t": "Includi le sensazioni del corpo: un prurito, un peso, un formicolio. Arrivano, cambiano, passano.",
+     "p": 25
+    },
+    {
+     "t": "Includi i pensieri. Non seguirli, non scacciarli. Guardali passare come auto dalla finestra.",
+     "p": 30
+    },
+    {
+     "t": "Se ti accorgi di essere salito su un'auto, scendi con calma e torna alla finestra.",
+     "p": 30
+    },
+    {
+     "t": "Tutto quello che appare in te, appare dentro qualcosa di più grande: la consapevolezza stessa.",
+     "p": 30
+    },
+    {
+     "t": "Resta in questo spazio, senza fare niente. Solo essere.",
+     "p": 40
+    },
+    {
+     "t": "Torna lentamente al respiro, al corpo, alla stanza.",
+     "p": 8
+    },
+    {
+     "t": "Hai completato le Radici. Ogni volta che vuoi, puoi tornare a sederti con ciò che c'è.",
+     "p": 2
+    }
+   ]
+  },
+  {
+   "id": "notare-pensieri",
+   "title": "Dare un nome ai pensieri",
+   "kind": "guided",
+   "minutes": 4,
+   "sound": "pink",
+   "segments": [
+    {
+     "t": "I pensieri non sono fatti. Sono eventi della mente. Oggi impariamo a riconoscerli, dando loro un nome.",
+     "p": 5
+    },
+    {
+     "t": "Siediti comodo e ancorati al respiro per qualche momento.",
+     "p": 20
+    },
+    {
+     "t": "Quando arriva un pensiero, etichettalo con una parola sola: ricordo, progetto, giudizio, preoccupazione, fantasia.",
+     "p": 6
+    },
+    {
+     "t": "Poi torna al respiro. Senza discutere con il pensiero, senza continuarlo.",
+     "p": 30
+    },
+    {
+     "t": "Se è un pensiero sul futuro, puoi dire: progetto. Se è sul passato: ricordo.",
+     "p": 30
+    },
+    {
+     "t": "Se è una critica verso te stesso, prova a dire, con un sorriso: giudizio. E lascialo.",
+     "p": 30
+    },
+    {
+     "t": "Nota come dare un nome crea un piccolo spazio tra te e il pensiero. In quello spazio c'è libertà.",
+     "p": 30
+    },
+    {
+     "t": "Continua così ancora un po'. Nominare, lasciare, tornare.",
+     "p": 40
+    },
+    {
+     "t": "Lascia ora le etichette. Respira semplicemente.",
+     "p": 10
+    },
+    {
+     "t": "Durante la giornata, quando una preoccupazione ti prende, prova a darle un nome. Spesso perde metà della sua forza.",
+     "p": 2
+    }
+   ]
+  },
+  {
+   "id": "cielo-nuvole",
+   "title": "Il cielo e le nuvole",
+   "kind": "guided",
+   "minutes": 4,
+   "sound": "ocean",
+   "segments": [
+    {
+     "t": "Immagina che la tua mente sia un cielo grande, aperto, azzurro.",
+     "p": 8
+    },
+    {
+     "t": "I pensieri, le emozioni, le sensazioni sono nuvole. Alcune leggere, altre scure e pesanti.",
+     "p": 10
+    },
+    {
+     "t": "Il cielo non si preoccupa delle nuvole. Le contiene, le lascia passare. Non diventa mai nuvola.",
+     "p": 12
+    },
+    {
+     "t": "Respira e osserva. Quale nuvola sta passando adesso?",
+     "p": 25
+    },
+    {
+     "t": "Se una nuvola è scura, non c'è bisogno di spingerla via. Il vento la porterà altrove.",
+     "p": 25
+    },
+    {
+     "t": "Anche nelle giornate di tempesta, sopra le nubi, il cielo è sempre sereno.",
+     "p": 25
+    },
+    {
+     "t": "Tu sei il cielo. Le nuvole passano. Tu resti.",
+     "p": 35
+    },
+    {
+     "t": "Resta in questa vastità ancora un po'.",
+     "p": 40
+    },
+    {
+     "t": "Porta con te questa immagine: quando arriva una tempesta interiore, ricorda che sei il cielo.",
+     "p": 2
+    }
+   ]
+  },
+  {
+   "id": "emozioni-corpo",
+   "title": "Le emozioni nel corpo",
+   "kind": "guided",
+   "minutes": 4,
+   "sound": "brown",
+   "segments": [
+    {
+     "t": "Le emozioni vivono nel corpo prima ancora che nei pensieri. Oggi impariamo ad accoglierle, in quattro passi.",
+     "p": 5
+    },
+    {
+     "t": "Pensa a una situazione recente che ti ha toccato un po'. Non la più dolorosa: una di media intensità.",
+     "p": 15
+    },
+    {
+     "t": "Primo passo: riconosci. Che emozione è? Rabbia, tristezza, paura, vergogna, delusione. Dalle un nome.",
+     "p": 15
+    },
+    {
+     "t": "Secondo passo: permetti. Dì dentro di te: va bene sentire questo. Non devi cambiarlo adesso.",
+     "p": 15
+    },
+    {
+     "t": "Terzo passo: esplora con curiosità. Dove la senti nel corpo? Il petto, la gola, lo stomaco? Com'è? Calda, stretta, pesante?",
+     "p": 25
+    },
+    {
+     "t": "Respira dentro quel punto. Come se il respiro potesse fargli spazio.",
+     "p": 25
+    },
+    {
+     "t": "Quarto passo: nutri. Metti una mano dove senti l'emozione, e chiediti: di cosa avrei bisogno adesso?",
+     "p": 25
+    },
+    {
+     "t": "Forse di gentilezza, di riposo, di essere ascoltato. Offrilo a te stesso, come faresti con un amico.",
+     "p": 25
+    },
+    {
+     "t": "Nota se qualcosa è cambiato, anche di poco.",
+     "p": 15
+    },
+    {
+     "t": "Riconoscere, permettere, esplorare, nutrire. Puoi farlo in un minuto, ovunque.",
+     "p": 2
+    }
+   ]
+  },
+  {
+   "id": "rilassamento-progressivo",
+   "title": "Lasciar andare la tensione",
+   "kind": "guided",
+   "minutes": 5,
+   "sound": "pink",
+   "segments": [
+    {
+     "t": "In questo rilassamento contrai un gruppo di muscoli per qualche secondo, poi lo lasci andare. Il contrasto insegna al corpo cosa vuol dire rilassarsi.",
+     "p": 5
+    },
+    {
+     "t": "Non stringere mai fino a sentire dolore. Basta una tensione moderata.",
+     "p": 4
+    },
+    {
+     "t": "Stringi i pugni. Senti la tensione nelle mani e negli avambracci. Tieni.",
+     "p": 6
+    },
+    {
+     "t": "Lascia andare. Nota la differenza, il calore che arriva.",
+     "p": 12
+    },
+    {
+     "t": "Porta le spalle verso le orecchie. Tieni.",
+     "p": 6
+    },
+    {
+     "t": "Lascia cadere. Senti il peso che scende.",
+     "p": 12
+    },
+    {
+     "t": "Strizza gli occhi e arriccia il naso, tutto il viso contratto. Tieni.",
+     "p": 6
+    },
+    {
+     "t": "Lascia andare. Il viso si distende, la fronte si allarga.",
+     "p": 12
+    },
+    {
+     "t": "Stringi i denti, non troppo, e tendi il collo. Tieni.",
+     "p": 6
+    },
+    {
+     "t": "Lascia andare. La mandibola si apre leggermente.",
+     "p": 12
+    },
+    {
+     "t": "Contrai la pancia, come per prepararti a un colpo. Tieni.",
+     "p": 6
+    },
+    {
+     "t": "Lascia andare. Il respiro torna libero, nella pancia.",
+     "p": 12
+    },
+    {
+     "t": "Stringi le natiche e le cosce. Tieni.",
+     "p": 6
+    },
+    {
+     "t": "Lascia andare.",
+     "p": 12
+    },
+    {
+     "t": "Punta i piedi verso di te, tendendo i polpacci. Tieni.",
+     "p": 6
+    },
+    {
+     "t": "Lascia andare. Tutto il corpo è più pesante, più morbido.",
+     "p": 20
+    },
+    {
+     "t": "Passa con l'attenzione dalla testa ai piedi. Se trovi un residuo di tensione, espira e lascialo scivolare via.",
+     "p": 30
+    },
+    {
+     "t": "Resta in questo rilassamento per qualche respiro.",
+     "p": 30
+    },
+    {
+     "t": "Quando vuoi, riprendi il movimento. Il corpo ora conosce la strada per lasciar andare.",
+     "p": 2
+    }
+   ]
+  },
+  {
+   "id": "gentilezza-verso-se",
+   "title": "Gentilezza verso di sé",
+   "kind": "guided",
+   "minutes": 3,
+   "sound": "brown",
+   "segments": [
+    {
+     "t": "Spesso trattiamo noi stessi con una durezza che non useremmo mai con un amico. Questa pratica cambia il tono della voce interiore.",
+     "p": 5
+    },
+    {
+     "t": "Pensa a qualcosa che ti fa soffrire un po', in questo periodo. Una difficoltà, un errore.",
+     "p": 15
+    },
+    {
+     "t": "Dì dentro di te: questo è un momento di sofferenza. Fa male. Non stai esagerando: è così.",
+     "p": 12
+    },
+    {
+     "t": "Poi: la sofferenza fa parte della vita. Non sei solo. Tante persone, in questo stesso momento, provano qualcosa di simile.",
+     "p": 12
+    },
+    {
+     "t": "Metti una mano sul cuore, o dove ti è più naturale. Senti il calore della tua mano.",
+     "p": 12
+    },
+    {
+     "t": "E dì: che io possa essere gentile con me stesso. Che io possa darmi ciò di cui ho bisogno.",
+     "p": 15
+    },
+    {
+     "t": "Se le parole non ti suonano vere, cerca le tue. Cosa diresti a un caro amico al tuo posto?",
+     "p": 25
+    },
+    {
+     "t": "Lascia che quelle parole arrivino a te. Con calma.",
+     "p": 25
+    },
+    {
+     "t": "La gentilezza verso di sé non è debolezza. È la base da cui si riparte.",
+     "p": 2
+    }
+   ]
+  },
+  {
+   "id": "respiro-478",
+   "title": "Respiro quattro sette otto",
+   "kind": "breath",
+   "minutes": 4,
+   "sound": "brown",
+   "breath": {
+    "in": 4,
+    "hold": 7,
+    "out": 8,
+    "hold2": 0
+   },
+   "segments": [
+    {
+     "t": "Il respiro quattro sette otto è un sedativo naturale per il sistema nervoso. Inspiri per quattro, trattieni per sette, espiri per otto.",
+     "p": 4
+    },
+    {
+     "t": "Appoggia la punta della lingua dietro i denti superiori. Espira lentamente dalla bocca, con un leggero soffio.",
+     "p": 4
+    },
+    {
+     "t": "Segui la luce. Se trattenere per sette è troppo, accorcia senza problemi: conta il rapporto, non i secondi.",
+     "p": 3
+    },
+    {
+     "breathe": 120
+    },
+    {
+     "t": "Molto bene. Fai ancora qualche ciclo, ancora più lento.",
+     "p": 2
+    },
+    {
+     "breathe": 80
+    },
+    {
+     "t": "Lascia il respiro libero. Nota la pesantezza, il calore.",
+     "p": 12
+    },
+    {
+     "t": "Usa questo respiro a letto, quattro cicli, quando vuoi addormentarti.",
+     "p": 2
+    }
+   ]
+  },
+  {
+   "id": "yoga-nidra",
+   "title": "Yoga nidra",
+   "kind": "guided",
+   "minutes": 7,
+   "sound": "theta",
+   "segments": [
+    {
+     "t": "Lo yoga nidra è il sonno dello yogi: un riposo profondo in cui il corpo dorme e la mente resta presente. Venti minuti possono ristorare come molte ore.",
+     "p": 5
+    },
+    {
+     "t": "Sdraiati sulla schiena, le braccia lungo il corpo, i palmi verso l'alto. Copriti se senti fresco.",
+     "p": 8
+    },
+    {
+     "t": "Lascia che il corpo diventi pesante. Non c'è niente da fare. Se ti addormenti, va bene comunque.",
+     "p": 10
+    },
+    {
+     "t": "Formula un'intenzione breve, al presente. Per esempio: sono in pace. Oppure: sono sveglio nei miei sogni. Ripetila tre volte dentro di te.",
+     "p": 20
+    },
+    {
+     "t": "Ora sposterò la tua attenzione velocemente nel corpo. Non muoverti, solo senti la parte nominata.",
+     "p": 4
+    },
+    {
+     "t": "Pollice destro. Indice. Medio. Anulare. Mignolo. Il palmo. Il dorso della mano. Il polso.",
+     "p": 6
+    },
+    {
+     "t": "L'avambraccio. Il gomito. Il braccio. La spalla destra. L'ascella. Il fianco destro.",
+     "p": 6
+    },
+    {
+     "t": "L'anca. La coscia. Il ginocchio. Lo stinco. La caviglia. Il tallone. La pianta del piede. Le dita del piede destro.",
+     "p": 8
+    },
+    {
+     "t": "Pollice sinistro. Indice. Medio. Anulare. Mignolo. Il palmo. Il dorso. Il polso.",
+     "p": 6
+    },
+    {
+     "t": "L'avambraccio. Il gomito. Il braccio. La spalla sinistra. L'ascella. Il fianco sinistro.",
+     "p": 6
+    },
+    {
+     "t": "L'anca. La coscia. Il ginocchio. Lo stinco. La caviglia. Il tallone. La pianta. Le dita del piede sinistro.",
+     "p": 8
+    },
+    {
+     "t": "La schiena intera. La nuca. La sommità della testa. La fronte. Le sopracciglia. Gli occhi. Le guance. Le labbra. Il mento.",
+     "p": 8
+    },
+    {
+     "t": "Tutto il lato destro. Tutto il lato sinistro. Tutto il corpo insieme.",
+     "p": 20
+    },
+    {
+     "t": "Senti il corpo pesante, così pesante da sprofondare nel pavimento.",
+     "p": 15
+    },
+    {
+     "t": "Ora leggero, così leggero da galleggiare.",
+     "p": 15
+    },
+    {
+     "t": "Senti il calore, come sotto il sole d'estate.",
+     "p": 15
+    },
+    {
+     "t": "Ora il fresco, come un ruscello di montagna sulla pelle.",
+     "p": 15
+    },
+    {
+     "t": "Immagina un lago immobile al tramonto. L'acqua riflette il cielo. Una barca di legno, ferma.",
+     "p": 20
+    },
+    {
+     "t": "Un sentiero nel bosco, il profumo della terra dopo la pioggia.",
+     "p": 20
+    },
+    {
+     "t": "Un cielo stellato, immenso. Tu sei lì, sdraiato, a guardarlo.",
+     "p": 30
+    },
+    {
+     "t": "Ritorna alla tua intenzione. Ripetila tre volte, con calma. Ora è un seme piantato in profondità.",
+     "p": 25
+    },
+    {
+     "t": "Torna lentamente. Senti il respiro, il corpo appoggiato, i suoni della stanza.",
+     "p": 12
+    },
+    {
+     "t": "Muovi le dita, stirati come al risveglio. Se è sera, puoi semplicemente lasciarti andare al sonno.",
+     "p": 2
+    }
+   ]
+  },
+  {
+   "id": "corpo-pesante",
+   "title": "Il corpo pesante",
+   "kind": "guided",
+   "minutes": 6,
+   "sound": "brown",
+   "segments": [
+    {
+     "t": "Questa pratica accompagna verso il sonno. Ascoltala già a letto, con le luci spente.",
+     "p": 6
+    },
+    {
+     "t": "Lascia che il materasso ti sostenga completamente. Non devi tenerti su: qualcun altro lo fa per te.",
+     "p": 12
+    },
+    {
+     "t": "Il braccio destro è pesante. Pesante e caldo.",
+     "p": 15
+    },
+    {
+     "t": "Il braccio sinistro è pesante. Pesante e caldo.",
+     "p": 15
+    },
+    {
+     "t": "Le gambe sono pesanti, affondano. Pesanti e calde.",
+     "p": 18
+    },
+    {
+     "t": "Il respiro si fa lento, da solo. Respira te, senza sforzo.",
+     "p": 18
+    },
+    {
+     "t": "Il cuore batte calmo e regolare.",
+     "p": 18
+    },
+    {
+     "t": "La pancia è calda, morbida, come al sole.",
+     "p": 18
+    },
+    {
+     "t": "La fronte è fresca, la mente si fa silenziosa.",
+     "p": 20
+    },
+    {
+     "t": "Ogni espirazione ti porta un gradino più giù, verso un sonno profondo e tranquillo.",
+     "p": 25
+    },
+    {
+     "t": "Non c'è niente da risolvere adesso. Tutto può aspettare fino a domani.",
+     "p": 25
+    },
+    {
+     "t": "Pesante. Caldo. Tranquillo.",
+     "p": 40
+    },
+    {
+     "t": "Lasciati andare.",
+     "p": 60
+    }
+   ]
+  },
+  {
+   "id": "mente-che-corre",
+   "title": "La mente che non si spegne",
+   "kind": "guided",
+   "minutes": 4,
+   "sound": "pink",
+   "segments": [
+    {
+     "t": "Quando la mente non smette di girare a letto, combatterla la sveglia ancora di più. Usiamo invece un trucco: confonderla dolcemente.",
+     "p": 5
+    },
+    {
+     "t": "Pensa a una parola semplice, di almeno cinque lettere. Per esempio: tavolo.",
+     "p": 8
+    },
+    {
+     "t": "Prendi la prima lettera, la T. Immagina, una alla volta, cose che iniziano con la T. Tenda. Torta. Treno. Tulipano.",
+     "p": 12
+    },
+    {
+     "t": "Per ognuna, fermati a vederla per qualche secondo, come una cartolina. Senza collegarle tra loro.",
+     "p": 25
+    },
+    {
+     "t": "Quando finiscono le idee, passa alla seconda lettera, la A. Ape. Albero. Arancia.",
+     "p": 30
+    },
+    {
+     "t": "Se torna una preoccupazione, dille: domani. E torna alle immagini.",
+     "p": 30
+    },
+    {
+     "t": "Continua così, con calma, lettera dopo lettera. Le immagini sconnesse sono il linguaggio del sonno che arriva.",
+     "p": 45
+    },
+    {
+     "t": "Puoi continuare da solo, anche dopo che la mia voce tace.",
+     "p": 60
+    }
+   ]
+  },
+  {
+   "id": "risveglio-gentile",
+   "title": "Risveglio gentile",
+   "kind": "guided",
+   "minutes": 2,
+   "sound": "none",
+   "segments": [
+    {
+     "t": "Buongiorno. Prima di alzarti, regalati qualche minuto.",
+     "p": 5
+    },
+    {
+     "t": "Se ricordi un sogno, anche un frammento, resta fermo e ripercorrilo prima di fare qualsiasi altra cosa. Poi annotalo nel diario.",
+     "p": 12
+    },
+    {
+     "t": "Fai tre respiri lenti e profondi. Senti l'aria del mattino.",
+     "p": 15
+    },
+    {
+     "t": "Stira le braccia sopra la testa. Le gambe. Senti il corpo che si risveglia.",
+     "p": 12
+    },
+    {
+     "t": "Pensa a tre cose per cui sei grato, anche piccole. Il letto caldo, una persona, il caffè che ti aspetta.",
+     "p": 25
+    },
+    {
+     "t": "Scegli un'intenzione per oggi. Non un compito: un modo di essere. Paziente. Presente. Curioso.",
+     "p": 15
+    },
+    {
+     "t": "Ripetila dentro di te. E portala con te nella giornata.",
+     "p": 6
+    },
+    {
+     "t": "Buona giornata.",
+     "p": 1
+    }
+   ]
+  },
+  {
+   "id": "intenzione-sogni",
+   "title": "L'intenzione di ricordare",
+   "kind": "guided",
+   "minutes": 3,
+   "sound": "theta",
+   "segments": [
+    {
+     "t": "Ricordare i sogni è un'abilità, e come ogni abilità si allena. Il primo strumento è l'intenzione, posta proprio prima di dormire.",
+     "p": 5
+    },
+    {
+     "t": "Sei a letto. Fai qualche respiro lento e lascia andare la giornata.",
+     "p": 15
+    },
+    {
+     "t": "Ripeti dentro di te, con calma e convinzione: stanotte ricorderò i miei sogni.",
+     "p": 10
+    },
+    {
+     "t": "Ancora: quando mi sveglio, resterò fermo e ricorderò.",
+     "p": 10
+    },
+    {
+     "t": "Immagina il momento del risveglio. Apri gli occhi, resti immobile, e un sogno torna alla mente. Lo afferri, lo ripercorri.",
+     "p": 20
+    },
+    {
+     "t": "Immagina di prendere il telefono e scriverlo nel diario, sorridendo.",
+     "p": 15
+    },
+    {
+     "t": "Stanotte ricorderò i miei sogni.",
+     "p": 25
+    },
+    {
+     "t": "Ora lasciati andare al sonno, con questa intenzione che lavora per te.",
+     "p": 30
+    }
+   ]
+  },
+  {
+   "id": "ricordo-al-risveglio",
+   "title": "Il diario appena svegli",
+   "kind": "guided",
+   "minutes": 2,
+   "sound": "none",
+   "segments": [
+    {
+     "t": "Ti sei appena svegliato. Non muoverti ancora: i sogni svaniscono in pochi secondi se ti alzi.",
+     "p": 6
+    },
+    {
+     "t": "Resta nella stessa posizione. Chiediti: dove ero? Cosa stava succedendo un attimo fa?",
+     "p": 15
+    },
+    {
+     "t": "Se trovi un frammento, anche minuscolo, tiralo come un filo. Cosa c'era prima? Chi c'era?",
+     "p": 20
+    },
+    {
+     "t": "Ripercorri il sogno all'indietro, dalla fine verso l'inizio. Le emozioni aiutano: cosa provavi?",
+     "p": 20
+    },
+    {
+     "t": "Se non ricordi niente, va bene. Nota come ti senti: anche un'emozione è una traccia.",
+     "p": 10
+    },
+    {
+     "t": "Ora apri il diario e annota tutto, anche parole sparse. Il dettaglio scritto oggi richiama altri sogni domani.",
+     "p": 2
+    }
+   ]
+  },
+  {
+   "id": "segni-del-sogno",
+   "title": "I segni ricorrenti",
+   "kind": "guided",
+   "minutes": 3,
+   "sound": "theta",
+   "segments": [
+    {
+     "t": "Rileggendo il diario, scoprirai elementi che tornano: luoghi, persone, situazioni strane. Sono i tuoi segni onirici.",
+     "p": 5
+    },
+    {
+     "t": "Pensa a uno di questi segni. Se ancora non ne hai, scegline uno tipico: volare, una casa che non conosci, una persona che non c'è più.",
+     "p": 12
+    },
+    {
+     "t": "Immaginalo con chiarezza. I colori, la luce, i suoni.",
+     "p": 15
+    },
+    {
+     "t": "Ora immagina di riconoscerlo, nel sogno. Ti fermi e pensi: questo è un mio segno. Sto sognando.",
+     "p": 15
+    },
+    {
+     "t": "Senti la sorpresa, la lucidità che si accende.",
+     "p": 15
+    },
+    {
+     "t": "Ripeti dentro di te: la prossima volta che vedrò questo segno, mi accorgerò che sto sognando.",
+     "p": 15
+    },
+    {
+     "t": "Fallo con un secondo segno, se ne hai uno.",
+     "p": 25
+    },
+    {
+     "t": "I segni che riconosci di giorno diventano porte di notte.",
+     "p": 2
+    }
+   ]
+  },
+  {
+   "id": "wbtb",
+   "title": "Il risveglio di metà notte",
+   "kind": "guided",
+   "minutes": 2,
+   "sound": "theta",
+   "segments": [
+    {
+     "t": "Sei sveglio nel cuore della notte, dopo circa cinque ore di sonno. È il momento migliore per sognare: il sonno REM è più lungo e vivido.",
+     "p": 5
+    },
+    {
+     "t": "Resta in una luce soffusa. Non guardare messaggi o notizie.",
+     "p": 6
+    },
+    {
+     "t": "Ripensa all'ultimo sogno, se c'era. Annotalo brevemente.",
+     "p": 20
+    },
+    {
+     "t": "Ora, per qualche minuto, resta sveglio ma calmo. Leggi i tuoi segni onirici, o ripeti la tua intenzione.",
+     "p": 25
+    },
+    {
+     "t": "Quando torni a letto, ripeti: il prossimo sogno lo ricorderò. Oppure, se sei nella tappa successiva: mi accorgerò che sto sognando.",
+     "p": 15
+    },
+    {
+     "t": "Lasciati riaddormentare dolcemente, portando l'intenzione con te.",
+     "p": 20
+    }
+   ]
+  },
+  {
+   "id": "rientrare-nel-sogno",
+   "title": "Il filo del sogno",
+   "kind": "guided",
+   "minutes": 4,
+   "sound": "theta",
+   "segments": [
+    {
+     "t": "A volte ci si sveglia nel mezzo di un sogno. Con questa pratica impari a rientrarci.",
+     "p": 5
+    },
+    {
+     "t": "Resta immobile, gli occhi chiusi. Ricostruisci l'ultima scena del sogno nei dettagli: dove eri, cosa vedevi.",
+     "p": 20
+    },
+    {
+     "t": "Entra nella scena con i sensi: la temperatura, il terreno sotto i piedi, i suoni.",
+     "p": 25
+    },
+    {
+     "t": "Lascia che la scena si muova da sola, come un film che riprende.",
+     "p": 25
+    },
+    {
+     "t": "Non controllare troppo. Osserva, e lascia che il sonno ti riporti dentro.",
+     "p": 30
+    },
+    {
+     "t": "Se ti accorgi che sei tornato nel sogno, ricordati: questo è un sogno.",
+     "p": 30
+    },
+    {
+     "t": "Continua a scivolare. Buon viaggio.",
+     "p": 40
+    }
+   ]
+  },
+  {
+   "id": "test-di-realta",
+   "title": "Il test di realtà",
+   "kind": "guided",
+   "minutes": 2,
+   "sound": "none",
+   "segments": [
+    {
+     "t": "Un test di realtà è una domanda seria fatta durante il giorno: sto sognando? Se diventa un'abitudine, la farai anche nei sogni.",
+     "p": 5
+    },
+    {
+     "t": "Proviamo il test del naso. Tappati il naso e prova a respirare. Nella realtà non passa aria. Nel sogno, spesso, sì.",
+     "p": 12
+    },
+    {
+     "t": "Ora guarda le tue mani. Contale. Nei sogni le dita cambiano, si moltiplicano, si deformano.",
+     "p": 10
+    },
+    {
+     "t": "Leggi una scritta qualsiasi, distogli lo sguardo, e rileggila. Nei sogni il testo cambia.",
+     "p": 12
+    },
+    {
+     "t": "La parte più importante: non farlo in automatico. Chiediti davvero se potresti sognare. Guarda la stanza: è tutto coerente?",
+     "p": 12
+    },
+    {
+     "t": "L'app ti ricorderà di fare questo test durante il giorno. Ogni volta: naso, mani, e la domanda sincera.",
+     "p": 4
+    },
+    {
+     "t": "Il traguardo di questa tappa: dieci test al giorno, per sette giorni.",
+     "p": 2
+    }
+   ]
+  },
+  {
+   "id": "mild",
+   "title": "MILD: ricordare di ricordare",
+   "kind": "guided",
+   "minutes": 4,
+   "sound": "theta",
+   "segments": [
+    {
+     "t": "MILD è la tecnica più studiata per i sogni lucidi. Si basa sulla memoria prospettica: ricordarsi di fare qualcosa in futuro, come imbucare una lettera.",
+     "p": 5
+    },
+    {
+     "t": "È ancora meglio usarla dopo il risveglio di metà notte. Sei a letto, rilassato.",
+     "p": 10
+    },
+    {
+     "t": "Ripensa a un sogno recente. Ripercorrilo dall'inizio.",
+     "p": 20
+    },
+    {
+     "t": "Ora trova un punto del sogno in cui qualcosa era strano. Un segno onirico.",
+     "p": 15
+    },
+    {
+     "t": "Immagina di tornare in quel sogno. Arrivi a quel punto, e questa volta ti accorgi: sto sognando.",
+     "p": 15
+    },
+    {
+     "t": "Immagina con chiarezza cosa farai da lucido. Volare, parlare con qualcuno, guardare le tue mani.",
+     "p": 20
+    },
+    {
+     "t": "Ripeti, con intenzione: la prossima volta che sogno, mi ricorderò che sto sognando.",
+     "p": 12
+    },
+    {
+     "t": "Ripeti ancora, lentamente, come un mantra. La prossima volta che sogno, mi ricorderò che sto sognando.",
+     "p": 25
+    },
+    {
+     "t": "Torna a immaginare la scena lucida. Poi di nuovo la frase. Alterna, finché il sonno arriva.",
+     "p": 45
+    },
+    {
+     "t": "Addormentati con l'ultimo pensiero rivolto a questa intenzione.",
+     "p": 30
+    }
+   ]
+  },
+  {
+   "id": "ritorno-nel-sogno-lucido",
+   "title": "Prova generale del sogno lucido",
+   "kind": "guided",
+   "minutes": 3,
+   "sound": "theta",
+   "segments": [
+    {
+     "t": "Il cervello impara anche dalle prove immaginate. Facciamo una prova generale del tuo prossimo sogno lucido.",
+     "p": 5
+    },
+    {
+     "t": "Immagina di essere in un sogno, in un luogo qualunque. Una strada, una casa, un prato.",
+     "p": 15
+    },
+    {
+     "t": "Qualcosa non torna. Fai il test del naso: l'aria passa. Il cuore accelera: stai sognando.",
+     "p": 15
+    },
+    {
+     "t": "Prima cosa: resta calmo. Strofina le mani e guardale. Il sogno si fa più nitido.",
+     "p": 15
+    },
+    {
+     "t": "Tocca il terreno, una parete. Senti la consistenza. Ogni senso coinvolto stabilizza il sogno.",
+     "p": 20
+    },
+    {
+     "t": "Ora scegli cosa fare. Sali in volo, lentamente, sopra la città. Guarda giù.",
+     "p": 25
+    },
+    {
+     "t": "Oppure chiedi a una persona del sogno: cosa rappresenti per me? Ascolta la risposta.",
+     "p": 25
+    },
+    {
+     "t": "Ricorda questa sequenza: test, calma, mani, sensi, scelta.",
+     "p": 15
+    },
+    {
+     "t": "Stanotte, quando accadrà, il tuo corpo saprà già cosa fare.",
+     "p": 2
+    }
+   ]
+  },
+  {
+   "id": "wild",
+   "title": "WILD: addormentarsi coscienti",
+   "kind": "guided",
+   "minutes": 6,
+   "sound": "theta",
+   "segments": [
+    {
+     "t": "Con il WILD entri nel sogno direttamente dalla veglia, senza perdere coscienza. Funziona meglio dopo il risveglio di metà notte.",
+     "p": 5
+    },
+    {
+     "t": "Sdraiati sulla schiena o nella tua posizione preferita. Decidi di non muoverti più.",
+     "p": 8
+    },
+    {
+     "t": "Il corpo deve addormentarsi; la mente resta una sentinella calma, che osserva.",
+     "p": 10
+    },
+    {
+     "t": "Rilassa il corpo dalla testa ai piedi. Lascia che diventi pesante, quasi assente.",
+     "p": 25
+    },
+    {
+     "t": "Potresti sentire voglia di girarti, di deglutire, un prurito. È il corpo che verifica se dormi. Resisti con dolcezza.",
+     "p": 25
+    },
+    {
+     "t": "Osserva il buio dietro le palpebre. Lampi, forme, colori. Sono le immagini ipnagogiche: non afferrarle, guardale.",
+     "p": 30
+    },
+    {
+     "t": "Potresti sentire vibrazioni, ronzii, una sensazione di caduta o di galleggiare. È normale e innocuo. Resta calmo e curioso.",
+     "p": 30
+    },
+    {
+     "t": "Lascia che le immagini diventino una scena. Non entrarci con forza: lasciati attrarre, come da una corrente.",
+     "p": 35
+    },
+    {
+     "t": "Quando la scena è stabile e la senti intorno a te, sei nel sogno. Ricorda: test, calma, mani, sensi.",
+     "p": 35
+    },
+    {
+     "t": "Se perdi il filo e ti addormenti, va bene. Hai comunque allenato la presenza.",
+     "p": 40
+    },
+    {
+     "t": "Continua da solo, in silenzio.",
+     "p": 60
+    }
+   ]
+  },
+  {
+   "id": "stabilizzare",
+   "title": "Stabilizzare il sogno lucido",
+   "kind": "guided",
+   "minutes": 2,
+   "sound": "none",
+   "segments": [
+    {
+     "t": "Molti primi sogni lucidi finiscono subito, per l'emozione. Ecco gli strumenti per farli durare.",
+     "p": 5
+    },
+    {
+     "t": "Uno: calma. L'eccitazione sveglia. Respira, e dì: resto qui.",
+     "p": 8
+    },
+    {
+     "t": "Due: le mani. Strofinale e guardale. Il contatto riaccende il sogno.",
+     "p": 8
+    },
+    {
+     "t": "Tre: i sensi. Tocca, ascolta, annusa. Più sensi usi, più il sogno è solido.",
+     "p": 8
+    },
+    {
+     "t": "Quattro: se la scena sbiadisce, gira su te stesso come una trottola. Spesso il sogno si ricrea intorno a te.",
+     "p": 8
+    },
+    {
+     "t": "Cinque: parla al sogno. Dì ad alta voce: più chiarezza adesso.",
+     "p": 8
+    },
+    {
+     "t": "Ripassa questa lista ogni sera, per qualche giorno. Diventerà istintiva.",
+     "p": 4
+    },
+    {
+     "t": "E al risveglio, anche dopo pochi secondi di lucidità, scrivilo nel diario. È un traguardo vero.",
+     "p": 2
+    }
+   ]
+  },
+  {
+   "id": "paralisi-senza-paura",
+   "title": "La paralisi del sonno senza paura",
+   "kind": "guided",
+   "minutes": 3,
+   "sound": "brown",
+   "segments": [
+    {
+     "t": "Prima di esplorare le esperienze fuori dal corpo, conosciamo il loro ingresso: la paralisi del sonno.",
+     "p": 5
+    },
+    {
+     "t": "Durante il sonno REM il corpo è immobilizzato, perché tu non agisca i sogni. A volte ci si sveglia a metà: la mente è sveglia, il corpo ancora no.",
+     "p": 8
+    },
+    {
+     "t": "Può arrivare con ronzii, pressione, la sensazione di una presenza. Fa impressione, ma è innocua: dura da secondi a pochi minuti, poi passa sempre.",
+     "p": 10
+    },
+    {
+     "t": "Ciò che la rende spaventosa è combatterla. Ciò che la trasforma è l'accoglienza.",
+     "p": 8
+    },
+    {
+     "t": "Se ti capita: respira lentamente, perché il respiro è sempre sotto il tuo controllo. Ripeti: è la paralisi, è innocua, sto bene.",
+     "p": 15
+    },
+    {
+     "t": "Muovi un dito del piede, piano, se vuoi uscirne. Oppure, se sei curioso, rilassati ancora di più: è la soglia del sogno lucido e dell'esperienza fuori dal corpo.",
+     "p": 15
+    },
+    {
+     "t": "Immagina ora di trovarti in quello stato, calmo, curioso, al sicuro. Senti il corpo pesante e la mente lucida.",
+     "p": 30
+    },
+    {
+     "t": "Paura e curiosità sono due modi di vivere la stessa sensazione. Puoi scegliere la curiosità.",
+     "p": 2
+    }
+   ]
+  },
+  {
+   "id": "corpo-addormentato",
+   "title": "Il corpo dorme, la mente è sveglia",
+   "kind": "guided",
+   "minutes": 7,
+   "sound": "theta",
+   "segments": [
+    {
+     "t": "Questo stato è stato chiamato focus dieci: il corpo addormentato, la mente sveglia. È la base delle esperienze fuori dal corpo.",
+     "p": 5
+    },
+    {
+     "t": "Sdraiati sulla schiena. Fai cinque respiri lunghi, e a ogni espirazione lascia andare un pensiero della giornata.",
+     "p": 30
+    },
+    {
+     "t": "Immagina un contenitore robusto, una cassa. Mettici dentro le preoccupazioni, una per una, e chiudi il coperchio. Le riprenderai dopo.",
+     "p": 25
+    },
+    {
+     "t": "Ora rilassa il corpo, a onde, dai piedi verso la testa. Ogni onda lo rende più pesante e più distante.",
+     "p": 30
+    },
+    {
+     "t": "Il corpo si addormenta. Tu no. Tu sei un punto di attenzione, calmo, al centro del petto, o della fronte.",
+     "p": 30
+    },
+    {
+     "t": "Se senti formicolii, vibrazioni, la sensazione che il corpo sia enorme o minuscolo, accoglila. È il segnale che ci sei.",
+     "p": 35
+    },
+    {
+     "t": "Non muoverti. Non c'è niente da ottenere. Solo restare in questa soglia, lucido.",
+     "p": 40
+    },
+    {
+     "t": "Senti lo spazio intorno a te, anche senza vederlo. La stanza, il letto, l'aria.",
+     "p": 40
+    },
+    {
+     "t": "Quando vorrai uscire da questo stato, ti basterà muovere le dita e fare un respiro profondo.",
+     "p": 30
+    },
+    {
+     "t": "Resta ancora un po' in silenzio, qui.",
+     "p": 60
+    },
+    {
+     "t": "Ora torna. Muovi le dita, i piedi. Respira profondamente. Riprendi il corpo, con gratitudine.",
+     "p": 2
+    }
+   ]
+  },
+  {
+   "id": "tecnica-corda",
+   "title": "La tecnica della corda",
+   "kind": "guided",
+   "minutes": 5,
+   "sound": "theta",
+   "segments": [
+    {
+     "t": "Una delle tecniche più usate per le esperienze fuori dal corpo è la corda. Si pratica in stato di rilassamento profondo, idealmente dopo il risveglio di metà notte.",
+     "p": 5
+    },
+    {
+     "t": "Entra nello stato di corpo addormentato e mente sveglia. Rilassati completamente, senza muoverti.",
+     "p": 40
+    },
+    {
+     "t": "Immagina una corda robusta che pende dal soffitto, proprio sopra di te.",
+     "p": 15
+    },
+    {
+     "t": "Senza muovere le braccia fisiche, allunga le mani immaginarie verso la corda. Afferrala.",
+     "p": 20
+    },
+    {
+     "t": "Tira, una mano dopo l'altra. Senti lo sforzo, la ruvidità della corda, il peso del tuo corpo che si solleva.",
+     "p": 30
+    },
+    {
+     "t": "Potresti sentire vibrazioni forti o una vertigine. Continua a tirare, con calma e determinazione.",
+     "p": 30
+    },
+    {
+     "t": "Immagina di staccarti, salendo, fino a sentirti sospeso sopra il letto.",
+     "p": 35
+    },
+    {
+     "t": "Qualunque cosa accada, osserva con curiosità. Che sia un sogno lucido o un'esperienza vivida, sei al sicuro.",
+     "p": 35
+    },
+    {
+     "t": "Se perdi lo stato, rilassati di nuovo e riprova più tardi. Servono spesso molte sessioni.",
+     "p": 30
+    },
+    {
+     "t": "Quando vuoi tornare, pensa al tuo corpo fisico, muovi le dita, respira profondamente.",
+     "p": 2
+    }
+   ]
+  },
+  {
+   "id": "rotolamento",
+   "title": "Il rotolamento",
+   "kind": "guided",
+   "minutes": 4,
+   "sound": "theta",
+   "segments": [
+    {
+     "t": "Un'altra porta è il rotolamento. Funziona soprattutto appena svegli, quando il corpo è ancora addormentato.",
+     "p": 5
+    },
+    {
+     "t": "Resta immobile. Non aprire gli occhi. Senti il corpo pesante.",
+     "p": 25
+    },
+    {
+     "t": "Immagina di rotolare su un fianco, senza muovere il corpo fisico. Solo la sensazione del rotolare.",
+     "p": 25
+    },
+    {
+     "t": "Lascia che la sensazione diventi reale: il letto che si sposta, il bordo, la caduta morbida sul pavimento.",
+     "p": 30
+    },
+    {
+     "t": "Se ti senti uscire, non fermarti a controllare. Allontanati un poco dal letto, con calma.",
+     "p": 30
+    },
+    {
+     "t": "Guarda le tue mani, senti la stanza. Ricorda la sequenza: calma, mani, sensi.",
+     "p": 30
+    },
+    {
+     "t": "Se nulla accade, va bene. Hai allenato la percezione del corpo energetico, o semplicemente un rilassamento profondo.",
+     "p": 20
+    },
+    {
+     "t": "Torna muovendo le dita e respirando.",
+     "p": 2
+    }
+   ]
+  },
+  {
+   "id": "ritorno-integrazione",
+   "title": "Tornare e integrare",
+   "kind": "guided",
+   "minutes": 2,
+   "sound": "none",
+   "segments": [
+    {
+     "t": "Dopo un'esperienza intensa, che sia un sogno lucido, una paralisi o una sensazione di uscita, è importante tornare bene.",
+     "p": 5
+    },
+    {
+     "t": "Senti il peso del corpo. Premi i piedi contro il letto o il pavimento.",
+     "p": 12
+    },
+    {
+     "t": "Fai tre respiri profondi, espirando più a lungo di come inspiri.",
+     "p": 20
+    },
+    {
+     "t": "Nomina cinque oggetti della stanza, ad alta voce se puoi.",
+     "p": 15
+    },
+    {
+     "t": "Ora apri il diario e scrivi: cosa è successo, cosa hai provato, cosa ti ha colpito.",
+     "p": 10
+    },
+    {
+     "t": "Ricorda: queste sono esperienze soggettive, preziose per conoscerti. Il loro valore sta in ciò che ti insegnano, non nel dimostrare qualcosa.",
+     "p": 6
+    },
+    {
+     "t": "Bevi un bicchiere d'acqua, e torna alla tua giornata.",
+     "p": 2
+    }
+   ]
+  },
+  {
+   "id": "valori",
+   "title": "I tuoi valori",
+   "kind": "guided",
+   "minutes": 4,
+   "sound": "pink",
+   "segments": [
+    {
+     "t": "I valori sono la bussola: non mete da raggiungere, ma direzioni in cui camminare. Oggi li cerchiamo.",
+     "p": 5
+    },
+    {
+     "t": "Ricorda un momento in cui ti sei sentito pienamente te stesso. Fiero, vivo, al posto giusto.",
+     "p": 25
+    },
+    {
+     "t": "Cosa stavi facendo? Con chi? Cosa era importante, in quel momento?",
+     "p": 25
+    },
+    {
+     "t": "Ora ricorda un momento in cui eri molto arrabbiato o deluso. Spesso, sotto la rabbia, c'è un valore calpestato.",
+     "p": 25
+    },
+    {
+     "t": "Quale valore? Giustizia, rispetto, libertà, onestà, cura?",
+     "p": 20
+    },
+    {
+     "t": "Scegli tre parole che descrivono ciò che conta davvero per te. Ripetile dentro di te.",
+     "p": 30
+    },
+    {
+     "t": "Immagina una giornata in cui agisci secondo questi valori, anche nelle piccole cose.",
+     "p": 30
+    },
+    {
+     "t": "Dopo la pratica, scrivi le tue tre parole nella riflessione di oggi. Torneranno utili.",
+     "p": 2
+    }
+   ]
+  },
+  {
+   "id": "se-migliore",
+   "title": "La persona che stai diventando",
+   "kind": "guided",
+   "minutes": 4,
+   "sound": "theta",
+   "segments": [
+    {
+     "t": "Questa pratica, studiata in psicologia positiva, aumenta l'ottimismo e la motivazione. Immaginiamo il tuo sé migliore possibile.",
+     "p": 5
+    },
+    {
+     "t": "Pensa a te tra cinque anni. Tutto è andato bene, non per fortuna ma perché hai coltivato ciò che conta.",
+     "p": 20
+    },
+    {
+     "t": "Dove ti svegli? Com'è la tua mattina? Come ti senti nel corpo?",
+     "p": 25
+    },
+    {
+     "t": "Con chi passi il tempo? Come sono le tue relazioni?",
+     "p": 25
+    },
+    {
+     "t": "Cosa fai durante la giornata che ti dà senso?",
+     "p": 25
+    },
+    {
+     "t": "Che qualità ha sviluppato questa persona? Calma, coraggio, gentilezza, costanza?",
+     "p": 25
+    },
+    {
+     "t": "Ora guarda il te di oggi con gli occhi di quella persona. Cosa ti direbbe?",
+     "p": 30
+    },
+    {
+     "t": "Qual è un piccolo passo, uno solo, che puoi fare questa settimana in quella direzione?",
+     "p": 25
+    },
+    {
+     "t": "Scrivilo nella riflessione. La persona che diventi si costruisce un passo alla volta.",
+     "p": 2
+    }
+   ]
+  },
+  {
+   "id": "metta",
+   "title": "La gentilezza che si allarga",
+   "kind": "guided",
+   "minutes": 4,
+   "sound": "pink",
+   "segments": [
+    {
+     "t": "La meditazione di gentilezza amorevole allena il cuore come la palestra allena i muscoli. Le ricerche mostrano che aumenta le emozioni positive e il senso di connessione.",
+     "p": 5
+    },
+    {
+     "t": "Inizia da qualcuno che ami senza difficoltà. Una persona, o anche un animale. Vedilo davanti a te.",
+     "p": 15
+    },
+    {
+     "t": "Augura: che tu sia felice. Che tu sia in salute. Che tu sia al sicuro. Che tu viva con serenità.",
+     "p": 25
+    },
+    {
+     "t": "Ora rivolgi gli stessi auguri a te stesso. Che io sia felice. Che io sia in salute. Che io sia al sicuro. Che io viva con serenità.",
+     "p": 25
+    },
+    {
+     "t": "Pensa a una persona neutra, che vedi spesso ma non conosci: un vicino, un cassiere. Anche lui vuole essere felice.",
+     "p": 10
+    },
+    {
+     "t": "Che tu sia felice. Che tu sia in salute. Che tu sia al sicuro. Che tu viva con serenità.",
+     "p": 25
+    },
+    {
+     "t": "Se te la senti, pensa a una persona con cui hai una difficoltà. Non la più difficile. Anche lei soffre, a modo suo.",
+     "p": 10
+    },
+    {
+     "t": "Che tu sia libero dalla sofferenza. Che tu trovi pace.",
+     "p": 25
+    },
+    {
+     "t": "Ora allarga a tutti: la tua città, il tuo paese, ogni essere vivente.",
+     "p": 10
+    },
+    {
+     "t": "Che tutti gli esseri siano felici. Che tutti gli esseri siano in pace.",
+     "p": 30
+    },
+    {
+     "t": "Resta in questo calore, e portalo con te.",
+     "p": 2
+    }
+   ]
+  },
+  {
+   "id": "gratitudine",
+   "title": "Gratitudine profonda",
+   "kind": "guided",
+   "minutes": 3,
+   "sound": "ocean",
+   "segments": [
+    {
+     "t": "La gratitudine non è far finta che vada tutto bene. È allenare lo sguardo a vedere anche ciò che va bene.",
+     "p": 5
+    },
+    {
+     "t": "Pensa a qualcosa di semplice che oggi hai dato per scontato. L'acqua calda, un letto, il respiro stesso.",
+     "p": 20
+    },
+    {
+     "t": "Pensa a una persona che ti ha aiutato, anche tanto tempo fa. Ricorda cosa ha fatto per te.",
+     "p": 25
+    },
+    {
+     "t": "Senti dove la gratitudine si manifesta nel corpo. Spesso è un calore nel petto.",
+     "p": 20
+    },
+    {
+     "t": "Pensa a una difficoltà che ti ha insegnato qualcosa. Puoi essere grato per l'insegnamento, non per il dolore.",
+     "p": 25
+    },
+    {
+     "t": "Pensa a qualcosa che ti aspetta e che ti piace. Un incontro, un luogo, un piatto.",
+     "p": 20
+    },
+    {
+     "t": "Dopo la pratica, scrivi tre cose per cui sei grato. Farlo per una settimana ha effetti misurabili sul benessere.",
+     "p": 2
+    }
+   ]
+  },
+  {
+   "id": "la-tua-pratica",
+   "title": "La tua strada",
+   "kind": "guided",
+   "minutes": 3,
+   "sound": "pink",
+   "segments": [
+    {
+     "t": "Sei arrivato all'ultimo passo del cammino. Non è una fine: è il momento in cui la pratica diventa tua.",
+     "p": 5
+    },
+    {
+     "t": "Ripensa alle tappe. Il respiro, la mente, il sonno, i sogni, il corpo, i valori. Cosa ti è servito di più?",
+     "p": 25
+    },
+    {
+     "t": "Quale pratica vuoi tenere ogni giorno? Bastano cinque o dieci minuti.",
+     "p": 20
+    },
+    {
+     "t": "Quando la farai? Al mattino, alla sera, in pausa pranzo? Lega la pratica a qualcosa che fai già.",
+     "p": 20
+    },
+    {
+     "t": "Cosa ti aiuterà a tornare quando la abbandonerai? Perché succederà, ed è normale. Tornare è la pratica.",
+     "p": 20
+    },
+    {
+     "t": "Ringrazia te stesso per essere arrivato fin qui. Ogni minuto che hai dedicato è stato un atto di cura.",
+     "p": 15
+    },
+    {
+     "t": "Da ora si apre il cammino infinito: nuovi passi creati per te, sulla base del tuo diario e dei tuoi progressi.",
+     "p": 2
+    }
+   ]
+  },
+  {
+   "id": "respiro-quadrato",
+   "title": "Respiro quadrato",
+   "kind": "breath",
+   "minutes": 3,
+   "sound": "none",
+   "breath": {
+    "in": 4,
+    "hold": 4,
+    "out": 4,
+    "hold2": 4
+   },
+   "segments": [
+    {
+     "t": "Il respiro quadrato, usato anche da chi lavora sotto pressione, riporta lucidità in pochi minuti. Quattro tempi uguali: inspira, trattieni, espira, trattieni.",
+     "p": 3
+    },
+    {
+     "breathe": 180
+    },
+    {
+     "t": "Torna al respiro naturale. Lucido e pronto.",
+     "p": 2
+    }
+   ]
+  },
+  {
+   "id": "sospiro-fisiologico",
+   "title": "Il sospiro che calma",
+   "kind": "breath",
+   "minutes": 2,
+   "sound": "none",
+   "breath": {
+    "in": 3,
+    "hold": 1,
+    "out": 6,
+    "hold2": 0
+   },
+   "segments": [
+    {
+     "t": "Il sospiro fisiologico è il modo più rapido per calmarsi: due inspirazioni dal naso, una lunga e una breve per riempire bene, poi una lunga espirazione dalla bocca.",
+     "p": 3
+    },
+    {
+     "t": "Durante la pausa breve della luce, aggiungi il secondo piccolo sorso d'aria.",
+     "p": 2
+    },
+    {
+     "breathe": 90
+    },
+    {
+     "t": "Bastano pochi cicli. Usalo quando senti l'agitazione salire.",
+     "p": 2
+    }
+   ]
+  },
+  {
+   "id": "pausa-tre-minuti",
+   "title": "Pausa di tre minuti",
+   "kind": "guided",
+   "minutes": 3,
+   "sound": "none",
+   "segments": [
+    {
+     "t": "Tre minuti per fermarti, in tre momenti.",
+     "p": 3
+    },
+    {
+     "t": "Primo minuto: cosa c'è adesso? Pensieri, emozioni, sensazioni. Riconoscili senza cambiarli.",
+     "p": 45
+    },
+    {
+     "t": "Secondo minuto: raccogli l'attenzione sul respiro, nella pancia. Solo il respiro.",
+     "p": 45
+    },
+    {
+     "t": "Terzo minuto: allarga l'attenzione a tutto il corpo, alla postura, all'espressione del viso.",
+     "p": 45
+    },
+    {
+     "t": "Ora riprendi la giornata, un po' più presente.",
+     "p": 1
+    }
+   ]
+  }
+ ]
+}
