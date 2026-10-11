@@ -120,6 +120,92 @@
     },
   };
 
+  // Audio for the web app through Web Audio: Safari only lets sound start from a tap, and the voice arrives seconds
+  // later, so the audio context is unlocked on the first tap and then plays everything (voice, background, bell).
+  // The audio session is set to "playback", so it is heard even with the iPhone's silent switch on, like an app.
+  window.scAudio = (function () {
+    let ctx = null;
+    const nodes = {};
+
+    function context() {
+      if (!ctx) ctx = new (window.AudioContext || window.webkitAudioContext)();
+      return ctx;
+    }
+
+    function unlock() {
+      try {
+        if (navigator.audioSession) navigator.audioSession.type = 'playback';
+      } catch (_) {}
+      const c = context();
+      if (c.state !== 'running') c.resume().catch(() => {});
+      const s = c.createBufferSource();
+      s.buffer = c.createBuffer(1, 1, 22050);
+      s.connect(c.destination);
+      s.start(0);
+      try {
+        if (window.speechSynthesis && !window.__scTtsUnlocked) {
+          window.__scTtsUnlocked = true;
+          window.speechSynthesis.speak(new SpeechSynthesisUtterance(''));
+        }
+      } catch (_) {}
+    }
+    ['touchend', 'pointerup', 'click', 'keydown'].forEach((ev) =>
+      document.addEventListener(ev, unlock, { capture: true, passive: true }));
+
+    function stop(name) {
+      const n = nodes[name];
+      if (!n) return;
+      delete nodes[name];
+      try {
+        n.src.onended = null;
+        n.src.stop();
+      } catch (_) {}
+      n.resolve();
+    }
+
+    return {
+      // Plays WAV bytes on channel [name] (one sound per channel); resolves with the duration in seconds.
+      async play(name, bytes, volume, loop) {
+        stop(name);
+        const c = context();
+        if (c.state !== 'running') await c.resume().catch(() => {});
+        const buffer = await c.decodeAudioData(bytes.buffer.slice(bytes.byteOffset, bytes.byteOffset + bytes.byteLength));
+        const src = c.createBufferSource();
+        src.buffer = buffer;
+        src.loop = !!loop;
+        const gain = c.createGain();
+        gain.gain.value = volume;
+        src.connect(gain).connect(c.destination);
+        let resolve;
+        const done = new Promise((r) => (resolve = r));
+        const node = { src, gain, done, resolve };
+        src.onended = () => {
+          if (nodes[name] === node) delete nodes[name];
+          resolve();
+        };
+        nodes[name] = node;
+        src.start();
+        return buffer.duration;
+      },
+      // Resolves when the sound on [name] ends or is stopped.
+      wait(name) {
+        return nodes[name] ? nodes[name].done : Promise.resolve();
+      },
+      stop,
+      volume(name, v) {
+        const n = nodes[name];
+        if (n) n.gain.gain.setTargetAtTime(v, context().currentTime, 0.05);
+      },
+      async fade(name, seconds) {
+        const n = nodes[name];
+        if (!n) return;
+        n.gain.gain.setTargetAtTime(0, context().currentTime, seconds / 4);
+        await new Promise((r) => setTimeout(r, seconds * 1000));
+        stop(name);
+      },
+    };
+  })();
+
   // iPhone: motion sensors (night mode) need an explicit permission asked from a tap.
   window.scRequestMotion = async function () {
     try {
